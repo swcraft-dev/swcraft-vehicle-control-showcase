@@ -1,0 +1,119 @@
+name: BrakeThermalProtection
+type: application
+asil: B
+description: Derates the permitted brake action when the brake temperature rises, and reports the thermal state.
+package: Brake
+ports:
+- name: rBrakeTemperature
+  direction: require
+  interface: IBrakeTemperature
+  com_specs:
+  - data_element: temperature
+    enable_update: true
+    alive_timeout: 0.15
+    handle_never_received: true
+    handle_timeout_type: replace
+    handle_out_of_range: saturate
+    uses_end_to_end_protection: true
+    init: 25
+  measures:
+    wheelTemperatures: Feeds only the thermal status, never the permitted brake action; range-checked before use; illustrative.
+- name: rBrakeRequest
+  direction: require
+  interface: IBrakeRequest
+- name: rOperatingState
+  direction: require
+  interface: IVehicleOperatingState
+  description: A QM signal read by an ASIL B component.
+  measures:
+    state: Plausibility check against the brake request; illustrative.
+    vehicleSpeed: Read by no runnable of this component; illustrative.
+- name: pPermittedBrakeAction
+  satisfies:
+  - REQ_SHOWCASE_FEATURE_001@1
+  direction: provide
+  interface: IPermittedBrakeAction
+- name: pThermalProtectionStatus
+  direction: provide
+  interface: IThermalProtectionStatus
+- name: pThermalProtectionEvent
+  direction: provide
+  interface: IThermalProtectionEvent
+runnables:
+- name: InitThermalProtection
+  events:
+  - type: init
+    name: IT_ThermalProtectionStart
+  writes:
+  - port: pPermittedBrakeAction
+    element: permittedAction
+  writes_variables:
+  - variable: FilteredBrakeTemperature
+    name: WV_InitFilteredBrakeTemperature
+  - variable: DerateStepCount
+  can_enter:
+  - area: ThermalState
+- name: EvaluateThermalProtection
+  description: Compares the brake temperature against the derating thresholds and publishes the permitted action.
+  symbol: Btp_EvaluateThermalProtection
+  min_start_interval: 0.01
+  events:
+  - type: timing
+    period: 0.05
+    name: TMT_Evaluate50ms
+  wcet: 3500us
+  wcet_type: gross
+  reads:
+  - port: rBrakeTemperature
+    element: temperature
+    by: value
+    name: R_BrakeTemperature
+  - port: rBrakeTemperature
+    element: wheelTemperatures
+  - port: rBrakeRequest
+    element: request
+    by: implicit
+  - port: rOperatingState
+    element: state
+    by: implicit
+  writes:
+  - port: pPermittedBrakeAction
+    element: permittedAction
+    by: implicit
+    name: W_PermittedAction
+  - port: pThermalProtectionStatus
+    element: status
+  - port: pThermalProtectionEvent
+    element: event
+  reads_variables:
+  - variable: FilteredBrakeTemperature
+    name: RV_FilteredBrakeTemperature
+  - variable: DerateStepCount
+  writes_variables:
+  - variable: FilteredBrakeTemperature
+  - variable: DerateStepCount
+  runs_inside:
+  - area: ThermalState
+  satisfies:
+  - REQ_SHOWCASE_FEATURE_001@1
+variables:
+- name: FilteredBrakeTemperature
+  access: implicit
+  application_type: BrakeTemperature_C
+  init: 25
+  sw_calibration_access: read_only
+  description: The brake temperature after filtering, which the 50 ms evaluation compares against the derating thresholds.
+- name: DerateStepCount
+  access: explicit
+  implementation_type: uint16
+  init: 0
+exclusive_areas:
+- name: ThermalState
+  description: Guards the derating state the start-up and the 50 ms evaluation share.
+memory:
+  RAM: 4096
+handle_termination_and_restart: no_support
+data_type_mappings:
+- BrakeThermalMappings
+satisfies:
+- REQ_BTP_DECOMP_MONITOR@1

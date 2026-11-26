@@ -1,0 +1,25 @@
+name: BrakeTemperatureSensor
+type: application
+ports:
+- name: pBrakeTemperature
+  direction: provide
+  interface: IBrakeTemperature
+  satisfies:
+  - REQ_SHOWCASE_BASELINE_001@1
+runnables:
+- name: PublishBrakeTemperature
+  events:
+  - type: timing
+    period: 0.05
+  writes:
+  - port: pBrakeTemperature
+    element: temperature
+  - port: pBrakeTemperature
+    element: wheelTemperatures
+memory:
+  RAM: 2048
+handle_termination_and_restart: no_support
+data_type_mappings:
+- BrakeThermalMappings
+satisfies:
+- REQ_BTP_DECOMP_MAIN@1

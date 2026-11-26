@@ -1,0 +1,12 @@
+name: brake_thermal_cycle
+task: Task_50ms
+title: Brake thermal cycle
+steps:
+- instance: Chassis/BrakeSubsystem/FrontBrakeSensor
+  runnable: PublishBrakeTemperature
+- instance: Chassis/RearBrakeSensor
+  runnable: PublishBrakeTemperature
+- swc: BrakeThermalProtection
+  runnable: EvaluateThermalProtection
+- swc: BrakeController
+  runnable: ProcessBrakeRequest

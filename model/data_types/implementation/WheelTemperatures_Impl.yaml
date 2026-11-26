@@ -1,0 +1,7 @@
+name: WheelTemperatures_Impl
+kind: implementation_array
+element_type: BrakeTemperature_T
+length: 4
+element_name: temperature
+description: Stored layout of the four wheel brake temperatures.
+package: Brake

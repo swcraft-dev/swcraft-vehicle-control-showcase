@@ -1,0 +1,7 @@
+name: IThermalProtectionEvent
+kind: sender_receiver
+data_elements:
+- name: event
+  application_type: ThermalProtectionState
+  asil: A
+  sw_impl_policy: queued

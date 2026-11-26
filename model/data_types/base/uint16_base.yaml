@@ -1,0 +1,7 @@
+name: uint16_base
+kind: base_type
+size: 16
+encoding: unsigned
+native_declaration: uint16_t
+description: Unsigned 16-bit integer, the storage of the brake temperature and the vehicle speed.
+package: Integers

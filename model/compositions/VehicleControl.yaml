@@ -1,0 +1,25 @@
+name: VehicleControl
+title: Vehicle control
+root: true
+description: >-
+  The top of the hierarchy: the chassis composition stands beside the vehicle
+  state, the diagnostics, the instrument cluster and the storage stub, and the
+  connectors between them are drawn inside it. A connector that names no
+  composition belongs to the root.
+
+members:
+  - name: Chassis
+    composition: Chassis
+    description: The chassis, with the brake controller and the brake subsystem inside it.
+  - name: VehicleStateManager
+    type: VehicleStateManager
+    description: Publishes the vehicle operating state the other components read.
+  - name: DiagnosticManager
+    type: DiagnosticManager
+    description: Receives the thermal-protection events.
+  - name: InstrumentCluster
+    type: InstrumentCluster
+    description: Shows the thermal-protection status to the driver.
+  - name: NvM
+    type: NvM
+    description: The platform's storage service, declared here as a stub.

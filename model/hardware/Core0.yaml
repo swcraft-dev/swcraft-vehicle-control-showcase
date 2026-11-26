@@ -1,0 +1,9 @@
+name: Core0
+kind: core
+hw_id: 0
+threshold: 0.7
+enforcement: strict
+asil_capability: A
+description: Illustrative showcase budget for CPU core 0, which runs the mixed-criticality 100 ms work.
+satisfies:
+- REQ_BTP_CORE_LOAD@1

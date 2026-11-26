@@ -1,0 +1,5 @@
+name: PlatformCounter16
+kind: external_type
+external_ref: /Platform/ImplementationDataTypes/Counter16
+external_dest: IMPLEMENTATION-DATA-TYPE
+description: A 16-bit counter type the platform declares outside this project.

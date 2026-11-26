@@ -1,0 +1,13 @@
+name: VehicleSpeed_Linear
+kind: linear
+unit: KilometerPerHour
+factor: 0.01
+offset: 0
+limits:
+  lower:
+    value: 0
+  upper:
+    value: 30000
+    interval: closed
+description: Scales the stored vehicle speed in hundredths of a km/h to km/h.
+package: Vehicle

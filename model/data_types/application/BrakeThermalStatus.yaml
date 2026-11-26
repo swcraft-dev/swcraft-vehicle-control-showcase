@@ -1,0 +1,11 @@
+name: BrakeThermalStatus
+kind: record
+fields:
+- name: temperature
+  type: BrakeTemperature_C
+  description: The brake temperature the state was decided on.
+- name: state
+  type: ThermalProtectionState
+  description: The thermal protection state.
+description: The brake temperature and the thermal protection state, reported together.
+package: Brake

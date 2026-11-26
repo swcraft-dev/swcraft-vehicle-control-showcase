@@ -1,0 +1,18 @@
+name: Task_100ms
+period: 0.1
+priority: 5
+partition: P_Vehicle
+wcet: 6000us
+description: The 100 ms task that publishes the vehicle state, processes diagnostic events and updates the instrument cluster.
+coexistence: The QM vehicle state publisher shares this task with ASIL A diagnostic work; illustrative freedom-from-interference argument, not verified by any tool.
+runnables:
+- swc: VehicleStateManager
+  runnable: PublishOperatingState
+- swc: DiagnosticManager
+  runnable: ProcessDiagnosticEvent
+- swc: DiagnosticManager
+  runnable: ConfirmSnapshotStored
+- swc: InstrumentCluster
+  runnable: UpdateThermalStatus
+satisfies:
+- REQ_BTP_CORE_LOAD@1

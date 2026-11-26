@@ -1,0 +1,28 @@
+# Project manifest. `dist_root` and `views_root` are also named literally in
+# moon.yml (every task's `outputs:`), and moon reads no more of this file than it
+# reads of the model — change them here and you must change them there too.
+# `swcraft clean-outputs`, the build's first task, moves the previous ARXML
+# aside as `model_old.arxml` and empties exactly these two roots as this file
+# declares them, so the clean step follows a rename on its own; a moon
+# `outputs:` entry left behind would then point at a directory nothing
+# generates into.
+#
+# `toolchain_version` is the SWCraft release this project is built with. Nothing
+# is installed here: the toolchain is one installation per machine, reached from
+# PATH -- which the workstation archive's installer edits on Windows and, on macOS
+# and Linux, prints one `export PATH=` line for. Every command compares this pin with
+# the toolchain it is running as — one that writes or gates refuses a mismatch,
+# the read-only ones report it and answer anyway — so raising it is the whole of
+# an upgrade on the project's side, and it is a declared build input, so the
+# next `moon run :build` regenerates rather than serving the previous version's
+# artifacts from the cache.
+name: vehicle-control-showcase
+schema_version: "1.0"
+toolchain_version: "0.24.0"
+arxml_version: "4.3.0"
+model_root: model
+dist_root: dist
+views_root: views
+outputs:
+  arxml: dist/model.arxml
+  needs: dist/needs.json

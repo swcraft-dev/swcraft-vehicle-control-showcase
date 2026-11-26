@@ -1,0 +1,8 @@
+name: SensorToProtection
+composition: BrakeSubsystem
+from:
+  swc: BrakeTemperatureSensor
+  port: pBrakeTemperature
+to:
+  swc: BrakeThermalProtection
+  port: rBrakeTemperature

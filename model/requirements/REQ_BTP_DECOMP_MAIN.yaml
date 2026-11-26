@@ -1,0 +1,9 @@
+id: REQ_BTP_DECOMP_MAIN
+title: Main channel measures the temperature and applies the brake request
+description: 'B(D) decomposition of REQ_BTP_SAFETY_GOAL, main channel: the sensor measures the brake temperature and the controller applies only the permitted brake action.'
+req_type: spec
+version: 1
+source: architecture
+derived_from:
+- REQ_BTP_SAFETY_GOAL@1
+asil: B(D)

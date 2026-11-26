@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "SWCraft model guard",
+      "trigger": "PreToolUse",
+      "matcher": "*",
+      "action": {
+        "type": "command",
+        "command": "swcraft guard --host kiro"
+      },
+      "timeout": 10
+    }
+  ]
+}

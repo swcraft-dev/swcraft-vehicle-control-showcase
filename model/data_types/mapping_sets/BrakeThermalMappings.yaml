@@ -1,0 +1,16 @@
+name: BrakeThermalMappings
+maps:
+- application: BrakeTemperature_C
+  implementation: BrakeTemperature_T
+- application: ThermalProtectionState
+  implementation: uint8
+- application: BrakeThermalStatus
+  implementation: BrakeThermalStatus_Impl
+- application: WheelTemperatures
+  implementation: WheelTemperatures_Impl
+- application: VehicleOperatingState
+  implementation: VehicleOperatingState_T
+- application: VehicleSpeed_Kmh
+  implementation: uint16
+description: Maps each application type of the vehicle to the implementation type that stores it.
+package: Brake

@@ -1,0 +1,14 @@
+name: ThermalProtectionState
+kind: enum
+literals:
+- name: NORMAL
+  value: 0
+  description: The brake is within its thermal limits.
+- name: DERATED
+  value: 1
+  description: The brake is hot and the permitted brake action is reduced.
+- name: PROTECTIVE
+  value: 2
+  description: The brake is overheated and only protective action is permitted.
+description: The thermal protection state of the brake.
+package: Brake

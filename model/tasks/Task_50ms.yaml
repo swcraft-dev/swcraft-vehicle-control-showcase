@@ -1,0 +1,17 @@
+name: Task_50ms
+period: 0.05
+priority: 10
+partition: P_Brake
+wcet: 12000us
+runnables:
+- instance: Chassis/BrakeSubsystem/FrontBrakeSensor
+  runnable: PublishBrakeTemperature
+- instance: Chassis/RearBrakeSensor
+  runnable: PublishBrakeTemperature
+- swc: BrakeThermalProtection
+  runnable: EvaluateThermalProtection
+- swc: BrakeController
+  runnable: ProcessBrakeRequest
+satisfies:
+- REQ_BTP_CORE_LOAD@1
+- REQ_BTP_EXECUTION_CONTEXT@1

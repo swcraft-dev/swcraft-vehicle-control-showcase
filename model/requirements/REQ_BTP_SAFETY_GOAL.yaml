@@ -1,0 +1,11 @@
+id: REQ_BTP_SAFETY_GOAL
+title: Prevent brake fade from thermal overload
+description: 'Safety goal: the brake system shall not lose braking capability because the brakes overheat. Decomposed into REQ_BTP_DECOMP_MAIN and REQ_BTP_DECOMP_MONITOR, each ASIL B(D). Illustrative.'
+req_type: req
+version: 1
+source: external
+baseline: "0.9"
+revision: "4"
+derived_from:
+- HAZ_BTP_BRAKE_FADE@1
+asil: D

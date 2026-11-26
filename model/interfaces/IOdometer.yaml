@@ -1,0 +1,7 @@
+name: IOdometer
+kind: external_interface
+external_ref: /Platform/Interfaces/Odometer
+external_dest: SENDER-RECEIVER-INTERFACE
+data_elements:
+- distance
+description: The platform's odometer signal, declared outside this project.

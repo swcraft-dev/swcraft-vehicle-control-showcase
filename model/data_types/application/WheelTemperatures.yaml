@@ -1,0 +1,6 @@
+name: WheelTemperatures
+kind: array
+element_type: BrakeTemperature_C
+length: 4
+description: The brake temperatures of the four wheels.
+package: Brake

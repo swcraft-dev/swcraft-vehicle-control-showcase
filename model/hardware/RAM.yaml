@@ -1,0 +1,13 @@
+name: RAM
+kind: memory
+type: RAM
+size: 32768
+accessible:
+- Core0
+- Core1
+threshold: 0.75
+enforcement: strict
+asil_capability: B
+description: Illustrative showcase memory budget, shared by both cores.
+satisfies:
+- REQ_BTP_EXECUTION_CONTEXT@1

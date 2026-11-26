@@ -1,0 +1,5 @@
+name: IBrakeRequest
+kind: sender_receiver
+data_elements:
+- name: request
+  implementation_type: uint16

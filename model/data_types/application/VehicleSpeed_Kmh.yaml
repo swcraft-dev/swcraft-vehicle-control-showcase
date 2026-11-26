@@ -1,0 +1,6 @@
+name: VehicleSpeed_Kmh
+kind: application_type
+unit_ref: KilometerPerHour
+compu_method_ref: VehicleSpeed_Linear
+data_constr_ref: VehicleSpeed_Constr
+description: Vehicle speed in kilometres per hour, its unit, scaling and limits stated by reference.

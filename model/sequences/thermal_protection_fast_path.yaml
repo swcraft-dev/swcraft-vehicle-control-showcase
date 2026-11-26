@@ -1,0 +1,10 @@
+name: thermal_protection_fast_path
+task: Task_50ms
+title: Thermal protection fast path
+steps:
+- instance: Chassis/BrakeSubsystem/FrontBrakeSensor
+  runnable: PublishBrakeTemperature
+- instance: Chassis/RearBrakeSensor
+  runnable: PublishBrakeTemperature
+- swc: BrakeThermalProtection
+  runnable: EvaluateThermalProtection

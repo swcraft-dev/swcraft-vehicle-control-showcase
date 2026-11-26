@@ -1,0 +1,6 @@
+name: rebalance
+search:
+  max_moves: 3
+  candidates: 3
+constraints:
+  locked: [BrakeThermalProtection]

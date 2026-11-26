@@ -1,0 +1,9 @@
+id: REQ_BTP_DECOMP_MONITOR
+title: Monitor channel limits the permitted brake action
+description: 'B(D) decomposition of REQ_BTP_SAFETY_GOAL, monitor channel: the thermal protection derates the permitted brake action when the brake temperature rises. The independence a decomposition assumes is not modelled: both channels run in Task_50ms on Core1, and the monitor reads the main channel''s brake temperature.'
+req_type: spec
+version: 1
+source: architecture
+derived_from:
+- REQ_BTP_SAFETY_GOAL@1
+asil: B(D)

@@ -1,0 +1,5 @@
+name: IEcuMode
+kind: external_interface
+external_ref: /Platform/Interfaces/EcuMode
+external_dest: MODE-SWITCH-INTERFACE
+description: The platform's ECU mode switch, declared outside this project.

@@ -1,0 +1,11 @@
+# Toolchain configuration for a standalone SWCraft architecture project.
+#
+# Deliberately declares no `python` toolchain. Moon has no built-in Python
+# toolchain plugin, so declaring one would only express intent — and this project
+# runs no interpreter of its own in any case. Every task in `moon.yml` invokes
+# the bare `swcraft` command on PATH -- which the workstation archive's installer
+# edits on Windows and prints an `export PATH=` line for on macOS and Linux -- and
+# `swcraft.yaml` pins which SWCraft release those tasks expect.
+# Nothing here depends on a SWCraft source checkout or on where that one
+# installation happens to live.
+$schema: 'https://moonrepo.dev/schemas/toolchain.json'

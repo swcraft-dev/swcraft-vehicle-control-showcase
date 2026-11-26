@@ -1,0 +1,7 @@
+name: ChassisToDiagnostics
+from:
+  composition: Chassis
+  port: pThermalProtectionEvent
+to:
+  swc: DiagnosticManager
+  port: rThermalProtectionEvent

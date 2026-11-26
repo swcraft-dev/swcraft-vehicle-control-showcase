@@ -1,0 +1,19 @@
+# Keep source inputs byte-stable across macOS and Windows checkouts.
+* text=auto eol=lf
+
+# Native Windows launchers, if introduced, use the conventional line ending.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Generated or reference binaries are never newline-normalized.
+*.gif binary
+*.ico binary
+*.inv binary
+*.jpg binary
+*.jpeg binary
+*.pdf binary
+*.png binary
+*.vsix binary
+*.whl binary
+*.zip binary

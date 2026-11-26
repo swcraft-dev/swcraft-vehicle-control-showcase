@@ -1,0 +1,4 @@
+name: KilometerPerHour
+display_name: km/h
+description: Kilometres per hour, the unit of the vehicle speed.
+package: Vehicle

@@ -1,0 +1,9 @@
+# Moon workspace for a standalone SWCraft architecture project.
+#
+# One project only: the repository root itself. The architecture model, its
+# manifest and its build graph all live here, so `moon run :build` and
+# `moon run architecture:build` are the same command.
+$schema: 'https://moonrepo.dev/schemas/workspace.json'
+
+projects:
+  architecture: '.'

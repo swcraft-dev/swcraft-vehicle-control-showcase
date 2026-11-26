@@ -1,0 +1,9 @@
+id: REQ_BTP_EXECUTION_CONTEXT
+title: Both channels run in an ASIL B context
+description: 'Design constraint: the runnables of both decomposed channels shall run in a partition rated at least ASIL B, on a core whose ASIL capability is at least the partition''s level, and the memory they use shall be capable of at least ASIL B.'
+req_type: spec
+version: 1
+source: architecture
+derived_from:
+- REQ_BTP_DECOMP_MAIN@1
+- REQ_BTP_DECOMP_MONITOR@1

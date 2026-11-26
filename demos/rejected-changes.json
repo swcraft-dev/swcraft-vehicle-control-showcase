@@ -1,0 +1,118 @@
+{
+  "entries": [
+    {
+      "slug": "incompatible-connector",
+      "rule": "connector.interface-mismatch",
+      "title": "A connector between ports of different interfaces",
+      "explanation": "A new connector wires the operating state that VehicleStateManager provides into the port where InstrumentCluster expects the thermal protection status. The two ports speak different interfaces, so no data could flow; the build refuses the connector before any ARXML is written.",
+      "edits": [
+        {
+          "path": "model/connectors/StateToCluster.yaml",
+          "create": "name: StateToCluster\nfrom:\n  swc: VehicleStateManager\n  port: pOperatingState\nto:\n  swc: InstrumentCluster\n  port: rThermalProtectionStatus\n"
+        }
+      ],
+      "errorLines": 1,
+      "expect": ["Connector 'StateToCluster' interface mismatch: required 'IThermalProtectionStatus'"]
+    },
+    {
+      "slug": "component-below-requirement",
+      "rule": "safety.component-below-requirements",
+      "title": "A component rated below the requirement it implements",
+      "explanation": "DiagnosticManager implements a requirement rated ASIL A. Declaring the component QM would claim less integrity than its requirement demands, and the build names both levels.",
+      "edits": [
+        {"path": "model/swc/application/DiagnosticManager.yaml", "find": "type: application\n", "replace": "type: application\nasil: QM\n"}
+      ],
+      "errorLines": 1,
+      "expect": ["SWC 'DiagnosticManager' declares ASIL QM, below the ASIL A"]
+    },
+    {
+      "slug": "consumer-without-measure",
+      "rule": "safety.consumer-above-element",
+      "title": "An ASIL B component reads QM data with no stated measure",
+      "explanation": "BrakeThermalProtection (ASIL B) reads the QM operating state. The port's measures say how the component guards each lower-rated element it reads; deleting them leaves the gap unexplained, and the build reports each element of the port's interface that is rated below the component.",
+      "edits": [
+        {"path": "model/swc/application/BrakeThermalProtection.yaml", "find": "  measures:\n    state: Plausibility check against the brake request; illustrative.\n    vehicleSpeed: Read by no runnable of this component; illustrative.\n", "replace": ""}
+      ],
+      "errorLines": 2,
+      "expect": [
+        "SWC 'BrakeThermalProtection' (ASIL B) requires 'state' (ASIL QM) through port 'rOperatingState'",
+        "SWC 'BrakeThermalProtection' (ASIL B) requires 'vehicleSpeed' (ASIL QM) through port 'rOperatingState'"
+      ]
+    },
+    {
+      "slug": "partition-on-unqualified-core",
+      "rule": "safety.partition-on-unqualified-core",
+      "title": "A partition moved to a core qualified below its level",
+      "explanation": "P_Brake is the ASIL B partition that runs the 50 ms brake work, on Core1, whose capability is D. Moving the partition to Core0, qualified only to ASIL A, would place it on a core not declared able to host its level; the build names the partition, its level, the core and its capability. The task moves with its partition, so no task file changes.",
+      "edits": [
+        {"path": "model/hardware/P_Brake.yaml", "find": "core: Core1", "replace": "core: Core0"}
+      ],
+      "errorLines": 1,
+      "expect": [
+        "Partition 'P_Brake' (ASIL B) is on core 'Core0' (ASIL capability A): a partition placed on a core not declared able to host its level."
+      ]
+    },
+    {
+      "slug": "period-not-multiple",
+      "rule": "task.runnable-period-not-multiple",
+      "title": "A runnable period that is not a multiple of its task",
+      "explanation": "ProcessBrakeRequest is mapped into the 50 ms task. A period of 40 ms cannot be served by a task that activates every 50 ms, and the build names the runnable, its period and the task.",
+      "edits": [
+        {"path": "model/swc/application/BrakeController.yaml", "find": "period: 0.05", "replace": "period: 0.04"}
+      ],
+      "errorLines": 1,
+      "expect": ["runnable 'BrakeController.ProcessBrakeRequest' has timing period 0.04s"]
+    },
+    {
+      "slug": "ram-over-budget",
+      "rule": "hardware.threshold-breach",
+      "title": "A memory estimate that breaks the RAM budget",
+      "explanation": "The components' RAM estimates add up against the budget the hardware layer declares. Raising BrakeThermalProtection's estimate from 4096 to 16000 bytes takes the total past the 24576-byte budget, and the build reports the sum.",
+      "edits": [
+        {"path": "model/swc/application/BrakeThermalProtection.yaml", "find": "RAM: 4096", "replace": "RAM: 16000"}
+      ],
+      "errorLines": 1,
+      "expect": ["Memory 'RAM' consumption 26240 bytes exceeds its budget of 24576 bytes"]
+    },
+    {
+      "slug": "unmapped-enum",
+      "rule": "data-type.application-type-unmapped",
+      "title": "An application type with no implementation mapping",
+      "explanation": "BrakeController speaks application data types on its ports. Without the mapping set that pairs each with an implementation type, the RTE could not represent the values; the build names the component and the type.",
+      "edits": [
+        {"path": "model/swc/application/BrakeController.yaml", "find": "data_type_mappings:\n- BrakeThermalMappings\n", "replace": ""}
+      ],
+      "errorLines": 2,
+      "expect": [
+        "SWC 'BrakeController' speaks type 'ThermalProtectionState' on its ports",
+        "SWC 'BrakeController' speaks type 'BrakeTemperature_C' on its ports"
+      ]
+    },
+    {
+      "slug": "queued-implicit-read",
+      "rule": "swc.access.queued-implicit-read",
+      "title": "An implicit read of a queued event",
+      "explanation": "ProcessDiagnosticEvent reads the thermal protection events, which arrive in a queue of four. An implicit read takes one value before the runnable starts and keeps it while the runnable runs; a queue has no one value to take, so the build refuses the read and names the runnable, the element and the port.",
+      "edits": [
+        {"path": "model/swc/application/DiagnosticManager.yaml", "find": "  reads:\n  - port: rThermalProtectionEvent\n    element: event\n", "replace": "  reads:\n  - port: rThermalProtectionEvent\n    element: event\n    by: implicit\n"}
+      ],
+      "errorLines": 1,
+      "expect": [
+        "SWC 'DiagnosticManager' runnable 'ProcessDiagnosticEvent' reads queued data element 'event' through port 'rThermalProtectionEvent' implicitly"
+      ]
+    },
+    {
+      "slug": "implicit-read-with-update-flag",
+      "rule": "swc.access.implicit-read-enable-update",
+      "title": "An implicit read of a value whose port asks for an update flag",
+      "explanation": "EvaluateThermalProtection reads the brake temperature by value, and the port's com_specs entry states enable_update, so the runnable can ask whether a new temperature arrived. An implicit read has no update flag to ask; turning the read implicit is refused, while the brake request and the operating state, which state no update flag, are read implicitly by the same runnable.",
+      "edits": [
+        {"path": "model/swc/application/BrakeThermalProtection.yaml", "find": "    by: value\n    name: R_BrakeTemperature\n", "replace": "    by: implicit\n    name: R_BrakeTemperature\n"}
+      ],
+      "errorLines": 1,
+      "expect": [
+        "SWC 'BrakeThermalProtection' runnable 'EvaluateThermalProtection' reads data element 'temperature' through port 'rBrakeTemperature' implicitly, and the port's com_specs entry for it states `enable_update: true`"
+      ]
+    }
+  ]
+}

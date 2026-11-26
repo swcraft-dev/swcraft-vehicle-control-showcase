@@ -1,0 +1,34 @@
+# The public part of this repository: what the open copy holds, and nothing else.
+#
+# One entry per line; '#' starts a comment. An entry ending in '/' opens that whole folder,
+# recursively. Any other entry names one file at the root. Everything not listed is closed,
+# so a new root file or a new top-level folder stays closed until a commit lists it here.
+# Closed today: docs/evidence/, docs/plans/, docs/notes/ and .gitea/ (the maintainer's
+# records and the work repository's gate). tests/test_open_copy.py fails when a tracked
+# top-level entry or a docs/ child is neither listed here nor on that closed list, and
+# SWCraft's scripts/public_snapshot.py (run with --repo) assembles and checks the snapshot.
+
+# Folders (whole)
+.github/
+.kiro/
+.moon/
+.vscode/
+demos/
+docs/briefs/
+docs/guide/
+experiments/
+kit/
+model/
+scripts/
+tests/
+# Root files
+.gitattributes
+.gitignore
+.prototools
+LICENSE
+NOTICE
+README.md
+THIRD-PARTY-NOTICES.md
+moon.yml
+public-paths.txt
+swcraft.yaml

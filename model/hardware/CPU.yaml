@@ -1,0 +1,5 @@
+name: CPU
+kind: processor
+description: The showcase processor — two application cores and one shared RAM pool.
+satisfies:
+- REQ_BTP_CORE_LOAD@1

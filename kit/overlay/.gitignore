@@ -1,0 +1,20 @@
+# Generated artifacts — never committed. The `swcraft` commands regenerate them,
+# and a failing build leaves none of an earlier build's behind.
+dist/
+views/
+
+# Moon's local task cache.
+.moon/cache/
+
+# Python
+__pycache__/
+*.pyc
+
+# Local settings (the path of the licensed schema) — never committed.
+.env
+
+# The licensed AUTOSAR schema — never part of the kit, never committed.
+schemas/
+
+# The requirements team's copy of the architecture (the requirements exchange).
+demos/requirements-exchange/team/swcraft/

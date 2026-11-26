@@ -1,0 +1,6 @@
+name: P_Vehicle
+kind: partition
+core: Core0
+asil: A
+coexistence: The QM vehicle state publisher shares this partition's memory protection with the ASIL A diagnostic and display work; illustrative freedom-from-interference argument, not verified by any tool.
+description: The partition on core 0 that runs the 100 ms vehicle, diagnostic and display work.

@@ -1,0 +1,18 @@
+name: BrakeTemperature_C
+kind: application_type
+unit: degC
+conversion:
+  factor: 0.1
+  offset: -40
+  limits:
+    lower:
+      value: 0
+      interval: closed
+    upper:
+      value: 14400
+      interval: closed
+range:
+  min: -40
+  max: 1000
+description: Physical brake disc temperature in degrees Celsius.
+package: Brake

@@ -1,0 +1,32 @@
+name: InstrumentCluster
+type: application
+ports:
+- name: rThermalProtectionStatus
+  direction: require
+  interface: IThermalProtectionStatus
+- name: rBrakeDiagnostics
+  direction: require
+  interface: IBrakeDiagnostics
+- name: rOdometer
+  direction: require
+  interface: IOdometer
+runnables:
+- name: UpdateThermalStatus
+  events:
+  - type: timing
+    period: 0.1
+  reads:
+  - port: rThermalProtectionStatus
+    element: status
+  - port: rOdometer
+    element: distance
+  calls:
+  - port: rBrakeDiagnostics
+    operation: ReadSnapshot
+memory:
+  RAM: 1536
+handle_termination_and_restart: can_be_terminated_and_restarted
+data_type_mappings:
+- BrakeThermalMappings
+satisfies:
+- REQ_SHOWCASE_BASELINE_002@1

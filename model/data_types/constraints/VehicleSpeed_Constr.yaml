@@ -1,0 +1,6 @@
+name: VehicleSpeed_Constr
+min: 0
+max: 300
+level: 0
+description: The physical limits of the vehicle speed in km/h.
+package: Vehicle

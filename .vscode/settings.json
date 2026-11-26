@@ -1,0 +1,30 @@
+{
+  "swcraft.experiments.trace.config": "experiments/trace.yaml",
+  "swcraft.requirementsImport.mapping": "demos/requirements-exchange/team.needs-mapping.yaml",
+  "swcraft.testTables.annotations": "demos/test-tables/annotations",
+  "xml.validation.filters": [
+    {
+      "pattern": "**/*.arxml",
+      "noGrammar": "ignore",
+      "schema": {
+        "enabled": "never"
+      }
+    }
+  ],
+  "cSpell.ignorePaths": [
+    "model/**",
+    "dist/**",
+    "views/**",
+    "demos/requirements-exchange/deliveries/**",
+    "demos/requirements-exchange/team/delivery-*/**",
+    "demos/requirements-exchange/prepared-links.json",
+    "demos/requirements-exchange/sites/**",
+    "demos/test-tables/annotations/**"
+  ],
+  "cSpell.words": [
+    "sgoal",
+    "swreq",
+    "needtable",
+    "urlencode"
+  ]
+}

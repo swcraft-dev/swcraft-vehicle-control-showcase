@@ -1,0 +1,3 @@
+name: uint8
+kind: value_type
+base: uint8_base

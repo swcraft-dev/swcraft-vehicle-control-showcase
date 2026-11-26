@@ -1,0 +1,6 @@
+# The requirements team's Sphinx, at the versions SWCraft's requirements interchange oracle was
+# built with. Installed in a venv outside the project; the project itself installs nothing.
+sphinx-needs==9.2.0
+sphinx==9.0.4
+ub-needs-exchange==1.1.0
+docutils==0.22.4

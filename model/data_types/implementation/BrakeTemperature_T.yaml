@@ -1,0 +1,5 @@
+name: BrakeTemperature_T
+kind: reference_type
+base: BrakeTemperatureRaw_T
+description: The implementation type that stores the physical brake temperature.
+package: Brake

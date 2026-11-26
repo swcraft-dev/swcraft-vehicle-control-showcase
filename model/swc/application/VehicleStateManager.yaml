@@ -1,0 +1,24 @@
+name: VehicleStateManager
+type: application
+asil: QM
+ports:
+- name: pOperatingState
+  direction: provide
+  interface: IVehicleOperatingState
+  satisfies:
+  - REQ_SHOWCASE_BASELINE_001@1
+runnables:
+- name: PublishOperatingState
+  events:
+  - type: timing
+    period: 0.1
+  writes:
+  - port: pOperatingState
+    element: state
+  - port: pOperatingState
+    element: vehicleSpeed
+memory:
+  RAM: 2048
+handle_termination_and_restart: can_be_terminated_and_restarted
+data_type_mappings:
+- BrakeThermalMappings

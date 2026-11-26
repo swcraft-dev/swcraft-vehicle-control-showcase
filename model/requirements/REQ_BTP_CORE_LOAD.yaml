@@ -1,0 +1,6 @@
+id: REQ_BTP_CORE_LOAD
+title: Each core stays within its load budget
+description: 'Design constraint: the worst-case load of each core of the processor, the sum over the tasks that run on it of wcet divided by period, shall stay at or below the core''s budget, 70 % on Core0 and 60 % on Core1, enforced strictly.'
+req_type: spec
+version: 1
+source: architecture

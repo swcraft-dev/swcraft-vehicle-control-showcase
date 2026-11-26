@@ -1,0 +1,8 @@
+name: NvMToDiagnostics
+from:
+  swc: NvM
+  port: pNvStorage
+to:
+  swc: DiagnosticManager
+  port: rNvStorage
+description: The storage stub serves the diagnostic manager's write requests.

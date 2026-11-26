@@ -1,0 +1,19 @@
+# team.needs-mapping.yaml - how the requirements team's needs.json, built with SWCraft's declarations, maps in.
+#
+# types: each KEY is the team's: a value of the `type` field of a need in the team's needs.json (the
+#        Sphinx-Needs directive name). Each VALUE is SWCraft's: req | spec | ignore.
+types:
+  swreq: req
+  sgoal: req
+  test: ignore
+# fields: each KEY is SWCraft's: a field of SWCraft's requirement. Each VALUE is the team's: the key of
+#         the team's need it is read from. `description: content` is stated here although it is also
+#         SWCraft's default: Sphinx-Needs writes the directive body as `content`.
+fields:
+  description: content
+  derived_from: parent
+  asil: safety
+  revision: rev
+# ignore: every entry is the team's: a key on the team's own needs that this mapping does not read. They
+#         are the keys SWCraft's declarations put on every need of the team's.
+ignore: [satisfies, satisfies_unconfirmed, derived_from, derived_from_unconfirmed, asil, swcraft_path]

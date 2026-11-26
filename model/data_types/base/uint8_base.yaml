@@ -1,0 +1,6 @@
+name: uint8_base
+kind: base_type
+size: 8
+encoding: unsigned
+native_declaration: uint8_t
+package: Integers

@@ -1,0 +1,7 @@
+id: REQ_BTP_DIAGNOSTICS
+title: Record thermal protection events
+description: The diagnostics record every thermal protection event and store a snapshot in non-volatile memory.
+req_type: spec
+version: 1
+source: architecture
+asil: A

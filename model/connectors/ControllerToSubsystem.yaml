@@ -1,0 +1,8 @@
+name: ControllerToSubsystem
+composition: Chassis
+from:
+  swc: BrakeController
+  port: pBrakeRequest
+to:
+  composition: BrakeSubsystem
+  port: rBrakeRequest

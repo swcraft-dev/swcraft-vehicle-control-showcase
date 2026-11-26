@@ -1,0 +1,9 @@
+name: IVehicleOperatingState
+kind: sender_receiver
+data_elements:
+- name: state
+  application_type: VehicleOperatingState
+  asil: QM
+- name: vehicleSpeed
+  application_type: VehicleSpeed_Kmh
+  asil: QM

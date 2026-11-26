@@ -1,0 +1,9 @@
+name: BrakeThermalStatus_Impl
+kind: implementation_record
+elements:
+- name: temperature
+  type: BrakeTemperature_T
+- name: state
+  type: uint8
+description: Stored layout of the thermal protection status.
+package: Brake

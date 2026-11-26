@@ -1,0 +1,10 @@
+name: INvStorage
+kind: external_interface
+external_ref: /Platform/Services/NvM_Storage
+external_dest: CLIENT-SERVER-INTERFACE
+operations:
+- WriteBlock
+- GetErrorStatus
+description: The platform's non-volatile storage service, declared outside this project.
+satisfies:
+- REQ_BTP_DIAGNOSTICS@1

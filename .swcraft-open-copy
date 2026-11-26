@@ -1,0 +1,2 @@
+SWCraft's open copy: scripts/public_snapshot.py writes this file into every snapshot it assembles.
+scripts/dev.py reads it: the work repository's internal tests are not part of this copy.

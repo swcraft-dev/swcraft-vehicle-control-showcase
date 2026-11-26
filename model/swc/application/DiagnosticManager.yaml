@@ -1,0 +1,91 @@
+name: DiagnosticManager
+type: application
+ports:
+- name: rThermalProtectionEvent
+  satisfies:
+  - REQ_BTP_DIAGNOSTICS@1
+  direction: require
+  interface: IThermalProtectionEvent
+  com_specs:
+  - data_element: event
+    queue_length: 4
+- name: pBrakeDiagnostics
+  direction: provide
+  interface: IBrakeDiagnostics
+  satisfies:
+  - REQ_SHOWCASE_BASELINE_002@1
+- name: rNvStorage
+  direction: require
+  interface: INvStorage
+- name: rEcuMode
+  direction: require
+  interface: IEcuMode
+runnables:
+- name: ProcessDiagnosticEvent
+  events:
+  - type: timing
+    period: 0.1
+    disabled_modes:
+    - port: rEcuMode
+      mode_group_ref: /Platform/Interfaces/EcuMode/currentMode
+      mode_ref: /Platform/ModeDeclarationGroups/EcuModes/SLEEP
+  - type: data
+    port: rThermalProtectionEvent
+    element: event
+    name: DRT_ThermalProtectionEvent
+    disabled_modes:
+    - port: rEcuMode
+      mode_group_ref: /Platform/Interfaces/EcuMode/currentMode
+      mode_ref: /Platform/ModeDeclarationGroups/EcuModes/SLEEP
+  reads:
+  - port: rThermalProtectionEvent
+    element: event
+  calls:
+  - port: rNvStorage
+    operation: WriteBlock
+    name: Call_StoreSnapshot
+    asynchronous: true
+    timeout: 0.5
+  - port: rNvStorage
+    operation: GetErrorStatus
+    name: Call_NvErrorStatus
+    asynchronous: true
+    poll: true
+    result: Result_NvErrorStatus
+    timeout: 0.01
+  writes_variables:
+  - variable: LastThermalEvent
+  satisfies:
+  - REQ_BTP_DIAGNOSTICS@1
+- name: ConfirmSnapshotStored
+  description: Records whether the non-volatile storage stored the snapshot ProcessDiagnosticEvent started writing.
+  events:
+  - type: call_returned
+    port: rNvStorage
+    operation: WriteBlock
+    result: Result_StoreSnapshot
+    name: ASRT_SnapshotStored
+  wcet: 200us
+  wcet_type: net
+  satisfies:
+  - REQ_BTP_DIAGNOSTICS@1
+- name: ServeSnapshot
+  concurrent: true
+  events:
+  - type: operation
+    port: pBrakeDiagnostics
+    operation: ReadSnapshot
+    name: OIT_ServeReadSnapshot
+  reads_variables:
+  - variable: LastThermalEvent
+variables:
+- name: LastThermalEvent
+  access: implicit
+  application_type: ThermalProtectionState
+  init: NORMAL
+behavior_name: DiagnosticManagerBehavior
+memory:
+  RAM: 1536
+handle_termination_and_restart: can_be_terminated
+data_type_mappings:
+- BrakeThermalMappings

@@ -1,0 +1,6 @@
+id: HAZ_BTP_BRAKE_FADE
+title: HAZ_BTP_BRAKE_FADE
+description: Placeholder - named as a parent by REQ_BTP_SAFETY_GOAL, not in the import.
+version: 1
+source: external
+stub: true

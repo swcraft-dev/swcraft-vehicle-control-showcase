@@ -1,0 +1,33 @@
+# moon/proto machine state
+.moon/cache/
+.moon/docker/
+.proto/
+
+# Generated model artifacts
+dist/
+views/
+
+# Local demonstration workspaces and evidence drafts
+.demo-workspaces/
+.evidence-local/
+
+# The requirements team's copy of the architecture (step 4 of the requirements exchange)
+demos/requirements-exchange/team/swcraft/
+
+# IDE and operating-system state
+.DS_Store
+Thumbs.db
+.idea/
+*.code-workspace
+
+# Python state
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Local secrets and licensed schemas
+.env
+.env.*
+!.env.example
+schemas/

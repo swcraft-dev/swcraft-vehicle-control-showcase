@@ -1,0 +1,8 @@
+name: BrakeTemperatureRaw_T
+kind: value_type
+base: uint16_base
+unit: 0.1 K offset
+value_min: 0
+value_max: 14400
+description: Raw brake temperature as the sensor stores it, in tenths of a degree above -40 degC.
+package: Brake

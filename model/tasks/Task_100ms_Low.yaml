@@ -1,0 +1,8 @@
+name: Task_100ms_Low
+period: 0.1
+priority: 3
+partition: P_Vehicle
+wcet: 1000us
+description: A second 100 ms task in the vehicle partition, below Task_100ms in priority, with no runnable mapped yet; it gives a runnable of the partition somewhere to move without leaving its partition.
+satisfies:
+- REQ_BTP_CORE_LOAD@1

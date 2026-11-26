@@ -1,0 +1,5 @@
+name: VehicleOperatingState_T
+kind: reference_type
+base: VehicleOperatingState_Impl
+compu_method_ref: VehicleOperatingState_Values
+description: The implementation type that stores the vehicle operating state.

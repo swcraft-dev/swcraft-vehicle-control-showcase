@@ -1,0 +1,11 @@
+name: NvM
+external: true
+external_ref: /Platform/ComponentTypes/NvM
+external_dest: SERVICE-SW-COMPONENT-TYPE
+description: The platform's non-volatile memory manager, declared outside this project.
+ports:
+- name: pNvStorage
+  direction: provide
+  observed_interface: INvStorage
+satisfies:
+- REQ_BTP_DIAGNOSTICS@1

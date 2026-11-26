@@ -1,0 +1,10 @@
+name: IThermalProtectionStatus
+kind: sender_receiver
+data_elements:
+- name: status
+  application_type: BrakeThermalStatus
+  init:
+    temperature: 20
+    state: NORMAL
+satisfies:
+- REQ_BTP_TEMPERATURE_RANGE@1

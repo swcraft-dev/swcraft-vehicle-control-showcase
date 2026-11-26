@@ -1,0 +1,16 @@
+# Toolchain pins for this architecture project, managed by proto
+# (https://moonrepo.dev/proto). `proto use` installs moon.
+#
+# This project owns its moon pin: the SWCraft repository does not pin moon at
+# all — moon belongs to the architecture project's build, not to the toolchain
+# it consumes.
+#
+# There is deliberately no `python` pin. It used to name the interpreter that
+# `bootstrap.py` created this project's `.venv` with; the project installs
+# nothing now. The SWCraft toolchain arrives as one installation per machine
+# from the workstation archive, whose installer picks the interpreter (Python
+# 3.11) and keeps it inside that installation — so a pin here would name a
+# version nothing reads and read as an instruction to install a Python this
+# project has no use for. Which SWCraft release this project expects is
+# `toolchain_version` in `swcraft.yaml`.
+moon = "2.3.5"

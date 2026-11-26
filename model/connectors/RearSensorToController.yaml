@@ -1,0 +1,9 @@
+name: RearSensorToController
+composition: Chassis
+from:
+  swc: BrakeTemperatureSensor
+  port: pBrakeTemperature
+to:
+  swc: BrakeController
+  port: rRearBrakeTemperature
+description: The rear sensor on the chassis, the second occurrence of the sensor type, feeds the brake controller.

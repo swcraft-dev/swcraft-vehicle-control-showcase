@@ -1,0 +1,13 @@
+name: DiagSnapshot_T
+kind: implementation_record
+elements:
+- name: sampleCount
+  type: uint8
+  description: Number of samples the snapshot holds.
+- name: temperatures
+  type: WheelTemperatures_Impl
+  description: The four wheel brake temperatures at the time of the snapshot.
+- name: counter
+  type: PlatformCounter16
+  description: The platform counter value when the snapshot was taken.
+description: A diagnostic snapshot of the brake temperatures, returned by the diagnostic service.

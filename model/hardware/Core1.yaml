@@ -1,0 +1,10 @@
+name: Core1
+kind: core
+hw_id: 1
+threshold: 0.6
+enforcement: strict
+asil_capability: D
+description: Illustrative showcase budget for CPU core 1, which runs the 50 ms brake work.
+satisfies:
+- REQ_BTP_CORE_LOAD@1
+- REQ_BTP_EXECUTION_CONTEXT@1

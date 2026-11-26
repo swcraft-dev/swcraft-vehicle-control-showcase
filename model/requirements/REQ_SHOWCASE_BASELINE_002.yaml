@@ -1,0 +1,9 @@
+id: REQ_SHOWCASE_BASELINE_002
+title: Provide diagnostic and display endpoints
+description: The architecture provides diagnostic and display endpoints for the showcase.
+req_type: req
+version: 1
+source: external
+document: "BL-SHOWCASE-001"
+baseline: "0.9"
+revision: "2"

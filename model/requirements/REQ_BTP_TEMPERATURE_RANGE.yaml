@@ -1,0 +1,9 @@
+id: REQ_BTP_TEMPERATURE_RANGE
+title: The brake temperature is carried from -40 to 1000 degC at 0.1 degC
+description: 'Design constraint: every interface that carries the brake temperature shall carry it in degrees Celsius over the physical range -40 degC to 1000 degC at a resolution of 0.1 degC, both ends of the range included.'
+req_type: spec
+version: 2
+source: architecture
+derived_from:
+- REQ_BTP_DECOMP_MAIN@1
+- REQ_BTP_DECOMP_MONITOR@1

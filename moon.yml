@@ -1,0 +1,247 @@
+# Build graph for a standalone SWCraft architecture project.
+#
+# `moon run :build` is the entry point and the whole local contract:
+#
+#     clean-outputs -> check-model -> generate arxml/diagrams/needs -> validate-arxml
+#
+# The gate runs last, after all three generators, and writes the build report,
+# `dist/build-report.md`, in the manifest's `dist_root` (beside the ARXML in
+# this project); the next build's first task removes it with the other outputs.
+#
+# The ordering is part of the contract, not an optimization. `clean-outputs`
+# runs first -- it moves the ARXML aside to `model_old.arxml` and removes the
+# rest -- and every generator declares `deps: ['check-model']`, so a model that
+# fails validation can never leave generated output behind under its own name:
+# no file of an earlier build survives a failing one under its own name, and the
+# previous ARXML is kept only as `_old`. That is the rule the acceptance suite
+# asserts. What a failing build does leave is this build's own: a failed
+# `validate-arxml` check exits non-zero with the ARXML it generated, and the
+# build report saying *Validation failed*, on disk -- and a generator that
+# depends on `check-model` alone can have written its output before another one
+# failed. Read the exit code, not the directory.
+#
+# Every task runs the bare `swcraft` from PATH. That is the whole of the
+# toolchain contract: one SWCraft installation per machine
+# reached from PATH -- the workstation archive's installer edits the user PATH on
+# Windows and prints an `export PATH=` line for a shell profile on macOS and
+# Linux -- and this project pins
+# *which release* it expects in `swcraft.yaml`'s `toolchain_version` rather than
+# installing one of its own. There is no `.venv` here, nothing to bootstrap and
+# no path into a SWCraft checkout; a version this project is not built for is
+# refused by the toolchain itself, naming both versions.
+#
+# One detail of how that command is spelled is load-bearing on Windows, and it
+# is not cosmetic:
+#
+#   * `options.shell: false` on every task that runs a command. moon's `shell`
+#     option defaults to **true on Windows and false everywhere else**, so on
+#     Windows alone moon composes the command line and hands it to PowerShell.
+#     That was measured to break this file's previous spelling outright: with
+#     `command: './.venv/bin/python'` PowerShell read a statement opening with a
+#     quoted string in *expression* mode and rejected the following token
+#     (`Unexpected token 'clean_outputs.py' in expression or statement`), and the
+#     build failed on its first task without ever reaching Python. The leading
+#     `./` that went with it was the other half of that fix: spawned without a
+#     shell, a bare `.venv/bin/python` did not resolve on Windows (`WinError 2`)
+#     while `./.venv/bin/python` did.
+#
+#     Both of those facts are about a *path* command, and neither transfers to
+#     the bare `swcraft` this file runs now. Whether moon resolves a bare name
+#     from `PATH` at all when it spawns without a shell on Windows — the case
+#     `WinError 2` was originally raised by — was the open half, and the seated
+#     Windows gate answered it on 2026-09-08 (checklist § 3.6 step 5a): **it
+#     does**. `moon run :build` in a freshly scaffolded project completed all
+#     seven tasks against a `swcraft` installed by the workstation archive, on
+#     Windows 11 with moon 2.3.5 and `options.shell: false` throughout. One host,
+#     one date, one moon version; nothing re-measures it. Keeping the shell off
+#     remains the option that needs no measurement — it removes a parser from the
+#     path instead of satisfying one.
+#
+# Do not "simplify" it back, and do not fork this file per platform.
+$schema: 'https://moonrepo.dev/schemas/project.json'
+
+# The input set every cacheable task below declares, named once. It was
+# copy-pasted into four tasks, and the last edit had to touch every copy --
+# exactly the drift a file group removes. `@group(...)` expands to these entries
+# verbatim, so the resolved inputs are unchanged.
+#
+# There is one group now. The second, `toolchain`, held
+# `requirements-swcraft.txt` and `.prototools` -- the files that *were* the
+# toolchain version -- so that upgrading the pin could not be served from moon's
+# cache. The project installs nothing to pin any more and the version it expects
+# is a field in `swcraft.yaml`, which `model` already carries: the rule survives
+# the group, and every task that may be cached still invalidates on a bump.
+fileGroups:
+  # The whole model, not just the layer a generator obviously reads: the
+  # generated needs.json also reads every layer an element can satisfy a requirement
+  # from (swc/, interfaces/, compositions/, tasks/, hardware/), and the diagrams
+  # carry sequence views. A narrower glob serves a stale cached artifact after a
+  # change to a layer it forgot to list. `swcraft.yaml` belongs here twice over:
+  # it names the model root and the output paths, and it pins the toolchain
+  # version.
+  model:
+    - 'model/**/*.yaml'
+    - 'swcraft.yaml'
+
+tasks:
+  # Moves the ARXML aside and removes the rest of the generated outputs. It takes
+  # no directory: `swcraft clean-outputs` reads `dist_root` and `views_root` from
+  # the manifest it is given, moves the manifest's ARXML to its `_old` name, and
+  # deletes the two roots keeping only that file and `audit.jsonl` (each a direct
+  # child of `dist_root`), so the arguments cannot disagree with the manifest --
+  # the cross-check the template's own `clean_outputs.py` had to perform is gone
+  # because the two sources of truth are gone.
+  #
+  # `cache: false` is mandatory here: this task deletes files and produces none,
+  # so with caching enabled moon can register a hit from the previous successful
+  # build and skip the deletion entirely -- after which a failing rebuild would
+  # leave the earlier run's ARXML/diagrams/needs.json in place and the failure guarantee above
+  # would silently evaporate. The same reasoning applies to any future task that
+  # acts on the filesystem without declaring `outputs`.
+  #
+  # `inputs: []` keeps moon from falling back to hashing every file in the
+  # project for this task. It has no inputs in any meaningful sense: it always
+  # runs.
+  clean-outputs:
+    command: 'swcraft'
+    args:
+      - 'clean-outputs'
+      - '--project'
+      - 'swcraft.yaml'
+    inputs: []
+    options:
+      cache: false
+      shell: false
+
+  # Model consistency only — this task writes nothing, which is why it declares
+  # no `outputs`. Deliberately NOT `swcraft validate`, which regenerates the
+  # ARXML on success and would race the generators below.
+  check-model:
+    command: 'swcraft'
+    args:
+      - 'check-model'
+      - '--project'
+      - 'swcraft.yaml'
+    deps:
+      - 'clean-outputs'
+    inputs:
+      - '@group(model)'
+    options:
+      shell: false
+
+  generate-arxml:
+    command: 'swcraft'
+    args:
+      - 'generate'
+      - 'arxml'
+      - '--project'
+      - 'swcraft.yaml'
+    deps:
+      - 'check-model'
+    inputs:
+      - '@group(model)'
+    outputs:
+      - 'dist/model.arxml'
+    options:
+      shell: false
+
+  # Every view the model has -- an SVG and an HTML page each, the index and the
+  # report -- written into `views_root`, which is why the output is the directory
+  # and not a file: the set of files follows the model. The layout runs in
+  # Node.js, the installation's own or the one on PATH.
+  generate-diagrams:
+    command: 'swcraft'
+    args:
+      - 'generate'
+      - 'diagrams'
+      - '--project'
+      - 'swcraft.yaml'
+    deps:
+      - 'check-model'
+    inputs:
+      - '@group(model)'
+    outputs:
+      - 'views/'
+    options:
+      shell: false
+
+  generate-needs:
+    command: 'swcraft'
+    args:
+      - 'generate'
+      - 'needs'
+      - '--project'
+      - 'swcraft.yaml'
+    deps:
+      - 'check-model'
+    inputs:
+      - '@group(model)'
+    outputs:
+      - 'dist/needs.json'
+    options:
+      shell: false
+
+  # The gate. `swcraft validate` re-checks the model, regenerates the ARXML and
+  # then validates that file -- a full XSD check on a machine holding the
+  # licensed schema for the version this project targets (point
+  # SWCRAFT_AUTOSAR_XSD_PATH at it) and a structural one everywhere else. A
+  # missing schema is not an error; the structural fallback runs instead.
+  #
+  # It carries no version argument on purpose: `swcraft validate` reads
+  # `arxml_version` from this project's own manifest, so this static task stays
+  # correct whatever the manifest says -- the same property the bare-path
+  # `arxml_validation` invocation it replaced had, for the same reason.
+  #
+  # `--report` makes it write `dist/build-report.md` once the ARXML is generated,
+  # whether the check then passes or fails, unless a `Warning: the build report
+  # was not written:` line says why it could not: the verdict, what the build wrote,
+  # the warnings, the cores and memories, and the ARXML elements changed against
+  # `dist/model_old.arxml`. The report never changes the exit code -- the exit
+  # code is the verdict -- and it is no qualification evidence.
+  #
+  # Four things about its shape are decisions, not defaults. It regenerates
+  # `dist/model.arxml` rather than only reading it, which is why it declares that
+  # file (and the report) as an `output`; and it is second in line for that file
+  # after `generate-arxml`, which is deliberate -- the generator is what the
+  # diagrams/needs.json branch runs beside, and the gate is what the build's exit code is
+  # about. It waits for all three generators, not only `generate-arxml`, so the
+  # report's list of what was built never reads the diagrams or the needs.json while
+  # their tasks are still writing them; a generator that fails therefore stops
+  # the gate, as the VS Code Build does. And `cache: false`: the verdict and the
+  # report depend on things no input can declare -- the licensed schema
+  # SWCRAFT_AUTOSAR_XSD_PATH points at, and the `_old` ARXML the report compares
+  # with -- so a cache hit could restore a verdict and a report computed against
+  # another schema or another previous build. The gate runs on every build.
+  # With caching off its inputs decide no cache hit; `@group(model)` stays in
+  # them as the record of what the gate reads -- the model and `swcraft.yaml`,
+  # whose toolchain pin a bump changes -- for the day caching returns.
+  validate-arxml:
+    command: 'swcraft'
+    args:
+      - 'validate'
+      - '--project'
+      - 'swcraft.yaml'
+      - '--report'
+    deps:
+      - 'generate-arxml'
+      - 'generate-diagrams'
+      - 'generate-needs'
+    inputs:
+      - '@group(model)'
+      - 'dist/model.arxml'
+    outputs:
+      - 'dist/model.arxml'
+      - 'dist/build-report.md'
+    options:
+      cache: false
+      shell: false
+
+  # The entry point. It runs nothing itself: the graph above is the build.
+  # `inputs: []` for the same reason as `clean-outputs` — a task that declares no
+  # inputs makes moon hash every file in the project.
+  build:
+    deps:
+      - 'validate-arxml'
+      - 'generate-diagrams'
+      - 'generate-needs'
+    inputs: []

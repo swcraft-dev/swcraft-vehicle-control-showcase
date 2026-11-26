@@ -1,0 +1,8 @@
+id: REQ_SHOWCASE_FEATURE_001
+title: Brake thermal protection evaluates and publishes
+description: The brake thermal protection evaluates the brake temperature and publishes the permitted brake action, its status and its events.
+req_type: req
+version: 1
+source: external
+baseline: "0.9"
+revision: "5"

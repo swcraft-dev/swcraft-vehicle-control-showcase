@@ -1,0 +1,23 @@
+name: IBrakeDiagnostics
+kind: client_server
+operations:
+- name: ReadSnapshot
+  arguments:
+  - name: wheel
+    direction: in
+    implementation_type: uint8
+    description: The wheel the snapshot is asked for.
+  - name: snapshot
+    direction: out
+    implementation_type: DiagSnapshot_T
+    description: The diagnostic snapshot returned to the caller.
+  - name: peakTemperature
+    direction: out
+    application_type: BrakeTemperature_C
+    description: The highest brake temperature the snapshot holds.
+  description: Returns the latest diagnostic snapshot of the brake temperatures.
+description: The diagnostic service that hands out brake temperature snapshots.
+package: Diagnostics
+is_service: true
+satisfies:
+- REQ_BTP_TEMPERATURE_RANGE@1

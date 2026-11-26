@@ -1,0 +1,5 @@
+name: SnapshotBuffer_Ptr
+kind: pointer
+target: WheelTemperatures_Impl
+description: A pointer to a buffer of wheel temperatures, declared for illustration and referenced by no port.
+package: Diagnostics

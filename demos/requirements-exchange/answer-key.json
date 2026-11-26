@@ -1,0 +1,427 @@
+{
+  "description": "The requirements exchange's answer key, the presenter's script for step 2: for each software requirement of the requirements team's delivery 1.0, the elements its text was written against, as SWCraft's trace link proposals address them ({kind, owner, name}); an empty list is a distractor the architecture does not realise. Synthetic, derived from no real project.",
+  "requirements": {
+    "SWR-BRK-001": {
+      "document": "SRS Brake Control",
+      "targets": [
+        {
+          "kind": "runnable",
+          "owner": "BrakeController",
+          "name": "ProcessBrakeRequest"
+        }
+      ]
+    },
+    "SWR-BRK-002": {
+      "document": "SRS Brake Control",
+      "targets": [
+        {
+          "kind": "swc",
+          "owner": null,
+          "name": "BrakeController"
+        }
+      ]
+    },
+    "SWR-BRK-003": {
+      "document": "SRS Brake Control",
+      "targets": [
+        {
+          "kind": "port",
+          "owner": "BrakeController",
+          "name": "rPermittedBrakeAction"
+        }
+      ]
+    },
+    "SWR-BRK-004": {
+      "document": "SRS Brake Control",
+      "targets": [
+        {
+          "kind": "port",
+          "owner": "BrakeController",
+          "name": "rRearBrakeTemperature"
+        }
+      ]
+    },
+    "SWR-BRK-005": {
+      "document": "SRS Brake Control",
+      "targets": [
+        {
+          "kind": "swc",
+          "owner": null,
+          "name": "BrakeController"
+        }
+      ]
+    },
+    "SWR-BRK-006": {
+      "document": "SRS Brake Control",
+      "targets": [
+        {
+          "kind": "task",
+          "owner": null,
+          "name": "Task_50ms"
+        }
+      ]
+    },
+    "SWR-BRK-007": {
+      "document": "SRS Brake Control",
+      "targets": [
+        {
+          "kind": "swc",
+          "owner": null,
+          "name": "BrakeController"
+        }
+      ]
+    },
+    "SWR-BRK-008": {
+      "document": "SRS Brake Control",
+      "targets": [
+        {
+          "kind": "swc",
+          "owner": null,
+          "name": "BrakeController"
+        }
+      ]
+    },
+    "SWR-BRK-009": {
+      "document": "SRS Brake Control",
+      "targets": [
+        {
+          "kind": "swc",
+          "owner": null,
+          "name": "BrakeController"
+        }
+      ]
+    },
+    "SWR-BRK-010": {
+      "document": "SRS Brake Control",
+      "targets": [
+        {
+          "kind": "swc",
+          "owner": null,
+          "name": "BrakeController"
+        }
+      ]
+    },
+    "SWR-BRK-011": {
+      "document": "SRS Brake Control",
+      "targets": []
+    },
+    "SWR-BRK-012": {
+      "document": "SRS Brake Control",
+      "targets": [
+        {
+          "kind": "swc",
+          "owner": null,
+          "name": "BrakeController"
+        },
+        {
+          "kind": "swc",
+          "owner": null,
+          "name": "DiagnosticManager"
+        }
+      ]
+    },
+    "SWR-THP-001": {
+      "document": "SRS Thermal Protection",
+      "targets": [
+        {
+          "kind": "runnable",
+          "owner": "BrakeThermalProtection",
+          "name": "EvaluateThermalProtection"
+        }
+      ]
+    },
+    "SWR-THP-002": {
+      "document": "SRS Thermal Protection",
+      "targets": [
+        {
+          "kind": "runnable",
+          "owner": "BrakeThermalProtection",
+          "name": "InitThermalProtection"
+        }
+      ]
+    },
+    "SWR-THP-003": {
+      "document": "SRS Thermal Protection",
+      "targets": [
+        {
+          "kind": "port",
+          "owner": "BrakeThermalProtection",
+          "name": "pPermittedBrakeAction"
+        }
+      ]
+    },
+    "SWR-THP-004": {
+      "document": "SRS Thermal Protection",
+      "targets": [
+        {
+          "kind": "port",
+          "owner": "BrakeThermalProtection",
+          "name": "pThermalProtectionStatus"
+        }
+      ]
+    },
+    "SWR-THP-005": {
+      "document": "SRS Thermal Protection",
+      "targets": [
+        {
+          "kind": "port",
+          "owner": "BrakeThermalProtection",
+          "name": "pThermalProtectionEvent"
+        }
+      ]
+    },
+    "SWR-THP-006": {
+      "document": "SRS Thermal Protection",
+      "targets": [
+        {
+          "kind": "runnable",
+          "owner": "BrakeTemperatureSensor",
+          "name": "PublishBrakeTemperature"
+        }
+      ]
+    },
+    "SWR-THP-007": {
+      "document": "SRS Thermal Protection",
+      "targets": [
+        {
+          "kind": "interface",
+          "owner": null,
+          "name": "IBrakeTemperature"
+        }
+      ]
+    },
+    "SWR-THP-008": {
+      "document": "SRS Thermal Protection",
+      "targets": [
+        {
+          "kind": "port",
+          "owner": "BrakeThermalProtection",
+          "name": "rOperatingState"
+        }
+      ]
+    },
+    "SWR-THP-009": {
+      "document": "SRS Thermal Protection",
+      "targets": [
+        {
+          "kind": "port",
+          "owner": "BrakeThermalProtection",
+          "name": "rBrakeTemperature"
+        }
+      ]
+    },
+    "SWR-THP-010": {
+      "document": "SRS Thermal Protection",
+      "targets": []
+    },
+    "SWR-THP-011": {
+      "document": "SRS Thermal Protection",
+      "targets": [
+        {
+          "kind": "swc",
+          "owner": null,
+          "name": "BrakeThermalProtection"
+        }
+      ]
+    },
+    "SWR-THP-012": {
+      "document": "SRS Thermal Protection",
+      "targets": [
+        {
+          "kind": "runnable",
+          "owner": "BrakeThermalProtection",
+          "name": "EvaluateThermalProtection"
+        }
+      ]
+    },
+    "SWR-DIA-001": {
+      "document": "SRS Diagnostics",
+      "targets": [
+        {
+          "kind": "runnable",
+          "owner": "DiagnosticManager",
+          "name": "ProcessDiagnosticEvent"
+        }
+      ]
+    },
+    "SWR-DIA-002": {
+      "document": "SRS Diagnostics",
+      "targets": [
+        {
+          "kind": "port",
+          "owner": "DiagnosticManager",
+          "name": "rNvStorage"
+        }
+      ]
+    },
+    "SWR-DIA-003": {
+      "document": "SRS Diagnostics",
+      "targets": [
+        {
+          "kind": "runnable",
+          "owner": "DiagnosticManager",
+          "name": "ServeSnapshot"
+        }
+      ]
+    },
+    "SWR-DIA-004": {
+      "document": "SRS Diagnostics",
+      "targets": [
+        {
+          "kind": "port",
+          "owner": "DiagnosticManager",
+          "name": "pBrakeDiagnostics"
+        }
+      ]
+    },
+    "SWR-DIA-005": {
+      "document": "SRS Diagnostics",
+      "targets": [
+        {
+          "kind": "port",
+          "owner": "DiagnosticManager",
+          "name": "rEcuMode"
+        }
+      ]
+    },
+    "SWR-DIA-006": {
+      "document": "SRS Diagnostics",
+      "targets": [
+        {
+          "kind": "port",
+          "owner": "DiagnosticManager",
+          "name": "rNvStorage"
+        }
+      ]
+    },
+    "SWR-DIA-007": {
+      "document": "SRS Diagnostics",
+      "targets": [
+        {
+          "kind": "runnable",
+          "owner": "DiagnosticManager",
+          "name": "ProcessDiagnosticEvent"
+        }
+      ]
+    },
+    "SWR-DIA-008": {
+      "document": "SRS Diagnostics",
+      "targets": [
+        {
+          "kind": "swc",
+          "owner": null,
+          "name": "DiagnosticManager"
+        }
+      ]
+    },
+    "SWR-DIA-009": {
+      "document": "SRS Diagnostics",
+      "targets": []
+    },
+    "SWR-DIA-010": {
+      "document": "SRS Diagnostics",
+      "targets": []
+    },
+    "SWR-DRV-001": {
+      "document": "SRS Driver Information",
+      "targets": [
+        {
+          "kind": "port",
+          "owner": "InstrumentCluster",
+          "name": "rThermalProtectionStatus"
+        }
+      ]
+    },
+    "SWR-DRV-002": {
+      "document": "SRS Driver Information",
+      "targets": [
+        {
+          "kind": "runnable",
+          "owner": "InstrumentCluster",
+          "name": "UpdateThermalStatus"
+        }
+      ]
+    },
+    "SWR-DRV-003": {
+      "document": "SRS Driver Information",
+      "targets": [
+        {
+          "kind": "port",
+          "owner": "InstrumentCluster",
+          "name": "rBrakeDiagnostics"
+        }
+      ]
+    },
+    "SWR-DRV-004": {
+      "document": "SRS Driver Information",
+      "targets": [
+        {
+          "kind": "port",
+          "owner": "InstrumentCluster",
+          "name": "rOdometer"
+        }
+      ]
+    },
+    "SWR-DRV-005": {
+      "document": "SRS Driver Information",
+      "targets": []
+    },
+    "SWR-DRV-006": {
+      "document": "SRS Driver Information",
+      "targets": []
+    },
+    "SWR-DRV-007": {
+      "document": "SRS Driver Information",
+      "targets": [
+        {
+          "kind": "runnable",
+          "owner": "VehicleStateManager",
+          "name": "PublishOperatingState"
+        }
+      ]
+    },
+    "SWR-DRV-008": {
+      "document": "SRS Driver Information",
+      "targets": [
+        {
+          "kind": "swc",
+          "owner": null,
+          "name": "VehicleStateManager"
+        }
+      ]
+    },
+    "SWR-GEN-001": {
+      "document": null,
+      "targets": [
+        {
+          "kind": "interface",
+          "owner": null,
+          "name": "IBrakeTemperature"
+        }
+      ]
+    },
+    "SWR-GEN-002": {
+      "document": null,
+      "targets": [
+        {
+          "kind": "core",
+          "owner": null,
+          "name": "Core0"
+        },
+        {
+          "kind": "core",
+          "owner": null,
+          "name": "Core1"
+        }
+      ]
+    },
+    "SWR-GEN-003": {
+      "document": null,
+      "targets": []
+    },
+    "SWR-GEN-004": {
+      "document": null,
+      "targets": []
+    }
+  }
+}

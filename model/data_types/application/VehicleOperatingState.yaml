@@ -1,0 +1,4 @@
+name: VehicleOperatingState
+kind: enum
+compu_method_ref: VehicleOperatingState_Values
+description: The vehicle operating state, its values taken from a shared table.

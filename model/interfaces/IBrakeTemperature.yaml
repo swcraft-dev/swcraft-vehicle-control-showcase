@@ -1,0 +1,19 @@
+name: IBrakeTemperature
+kind: sender_receiver
+data_elements:
+- name: temperature
+  application_type: BrakeTemperature_C
+  asil: B
+  init: 20
+  description: The brake disc temperature the sensor measures.
+  sw_calibration_access: read_only
+- name: wheelTemperatures
+  application_type: WheelTemperatures
+  asil: QM
+  init: [20, 20, 20, 20]
+  description: The per-wheel temperatures, for the thermal status and diagnostics; no safety requirement is allocated to them.
+description: The brake temperature as the sensor publishes it, for the disc and for each wheel.
+package: Brake
+is_service: true
+satisfies:
+- REQ_BTP_TEMPERATURE_RANGE@1

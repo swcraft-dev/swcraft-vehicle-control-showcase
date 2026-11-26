@@ -1,0 +1,57 @@
+name: BrakeSubsystem
+title: Brake subsystem
+package: Brake
+description: >-
+  The front brake temperature sensor and the brake thermal protection,
+  connected inside the subsystem; every other port of the protection reaches
+  the chassis through the subsystem boundary. The rear sensor, a second
+  occurrence of the same type, is a member of the chassis.
+
+ports:
+  - name: rBrakeRequest
+    direction: require
+    interface: IBrakeRequest
+  - name: rOperatingState
+    direction: require
+    interface: IVehicleOperatingState
+    description: The vehicle operating state, passed through to the thermal protection.
+  - name: pPermittedBrakeAction
+    direction: provide
+    interface: IPermittedBrakeAction
+  - name: pThermalProtectionStatus
+    direction: provide
+    interface: IThermalProtectionStatus
+  - name: pThermalProtectionEvent
+    direction: provide
+    interface: IThermalProtectionEvent
+
+members:
+  - name: FrontBrakeSensor
+    type: BrakeTemperatureSensor
+    description: The front occurrence of the sensor type; the rear one is a member of the chassis.
+  - name: BrakeThermalProtection
+    type: BrakeThermalProtection
+    description: Evaluates the brake temperature and limits the permitted brake action.
+
+delegations:
+  - name: DelegateBrakeRequest
+    port: rBrakeRequest
+    member: BrakeThermalProtection
+    member_port: rBrakeRequest
+  - name: DelegateSubsystemState
+    port: rOperatingState
+    member: BrakeThermalProtection
+    member_port: rOperatingState
+    description: The operating state the protection reads, delegated from the subsystem boundary.
+  - name: DelegatePermittedAction
+    port: pPermittedBrakeAction
+    member: BrakeThermalProtection
+    member_port: pPermittedBrakeAction
+  - name: DelegateSubsystemStatus
+    port: pThermalProtectionStatus
+    member: BrakeThermalProtection
+    member_port: pThermalProtectionStatus
+  - name: DelegateSubsystemEvent
+    port: pThermalProtectionEvent
+    member: BrakeThermalProtection
+    member_port: pThermalProtectionEvent

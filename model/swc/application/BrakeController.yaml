@@ -1,0 +1,37 @@
+name: BrakeController
+type: application
+ports:
+- name: pBrakeRequest
+  direction: provide
+  interface: IBrakeRequest
+  satisfies:
+  - REQ_SHOWCASE_BASELINE_001@1
+- name: rPermittedBrakeAction
+  direction: require
+  interface: IPermittedBrakeAction
+- name: rRearBrakeTemperature
+  direction: require
+  interface: IBrakeTemperature
+  description: The rear brake temperature, from the second occurrence of the sensor type on the chassis.
+  measures:
+    wheelTemperatures: Read by no runnable of this component; illustrative.
+runnables:
+- name: ProcessBrakeRequest
+  events:
+  - type: timing
+    period: 0.05
+  reads:
+  - port: rPermittedBrakeAction
+    element: permittedAction
+  - port: rRearBrakeTemperature
+    element: temperature
+  writes:
+  - port: pBrakeRequest
+    element: request
+memory:
+  RAM: 3072
+handle_termination_and_restart: no_support
+data_type_mappings:
+- BrakeThermalMappings
+satisfies:
+- REQ_BTP_DECOMP_MAIN@1

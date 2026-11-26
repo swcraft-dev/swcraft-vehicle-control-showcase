@@ -1,0 +1,7 @@
+name: StateToChassis
+from:
+  swc: VehicleStateManager
+  port: pOperatingState
+to:
+  composition: Chassis
+  port: rOperatingState

@@ -1,0 +1,701 @@
+{
+  "current_version": "1.1",
+  "project": "vehicle-control-showcase",
+  "versions": {
+    "1.1": {
+      "needs": {
+        "COMP-Chassis": {
+          "content": "The chassis level: the brake controller, the rear brake sensor and the brake subsystem, connected to each other here, with the operating state coming in and the thermal status and events going out through the chassis boundary.",
+          "id": "COMP-Chassis",
+          "satisfies": [
+            "REQ_BTP_SAFETY_GOAL"
+          ],
+          "swcraft_path": "compositions/Chassis.yaml",
+          "tags": [
+            "composition"
+          ],
+          "title": "Chassis",
+          "type": "arch_element"
+        },
+        "HW-CPU": {
+          "content": "The showcase processor — two application cores and one shared RAM pool.",
+          "id": "HW-CPU",
+          "satisfies": [
+            "REQ_BTP_CORE_LOAD"
+          ],
+          "swcraft_path": "hardware/CPU.yaml",
+          "tags": [
+            "processor"
+          ],
+          "title": "CPU",
+          "type": "arch_element"
+        },
+        "HW-Core0": {
+          "content": "Illustrative showcase budget for CPU core 0, which runs the mixed-criticality 100 ms work.",
+          "id": "HW-Core0",
+          "satisfies": [
+            "REQ_BTP_CORE_LOAD",
+            "SWR-GEN-002"
+          ],
+          "swcraft_path": "hardware/Core0.yaml",
+          "tags": [
+            "core"
+          ],
+          "title": "Core0",
+          "type": "arch_element"
+        },
+        "HW-Core1": {
+          "content": "Illustrative showcase budget for CPU core 1, which runs the 50 ms brake work.",
+          "id": "HW-Core1",
+          "satisfies": [
+            "REQ_BTP_CORE_LOAD",
+            "REQ_BTP_EXECUTION_CONTEXT",
+            "SWR-GEN-002"
+          ],
+          "swcraft_path": "hardware/Core1.yaml",
+          "tags": [
+            "core"
+          ],
+          "title": "Core1",
+          "type": "arch_element"
+        },
+        "HW-P_Brake": {
+          "content": "The partition on core 1 that runs the 50 ms brake work. Declared trusted, so it is not restricted for memory; it is rated at the highest level any partition of the processor declares.",
+          "id": "HW-P_Brake",
+          "satisfies": [
+            "REQ_BTP_EXECUTION_CONTEXT"
+          ],
+          "swcraft_path": "hardware/P_Brake.yaml",
+          "tags": [
+            "partition"
+          ],
+          "title": "P_Brake",
+          "type": "arch_element"
+        },
+        "HW-RAM": {
+          "content": "Illustrative showcase memory budget, shared by both cores.",
+          "id": "HW-RAM",
+          "satisfies": [
+            "REQ_BTP_EXECUTION_CONTEXT"
+          ],
+          "swcraft_path": "hardware/RAM.yaml",
+          "tags": [
+            "memory"
+          ],
+          "title": "RAM",
+          "type": "arch_element"
+        },
+        "IF-IBrakeDiagnostics": {
+          "content": "The diagnostic service that hands out brake temperature snapshots.",
+          "id": "IF-IBrakeDiagnostics",
+          "satisfies_unconfirmed": [
+            "REQ_BTP_TEMPERATURE_RANGE"
+          ],
+          "swcraft_path": "interfaces/IBrakeDiagnostics.yaml",
+          "tags": [
+            "interface"
+          ],
+          "title": "IBrakeDiagnostics",
+          "type": "arch_element"
+        },
+        "IF-IBrakeTemperature": {
+          "content": "The brake temperature as the sensor publishes it, for the disc and for each wheel.",
+          "id": "IF-IBrakeTemperature",
+          "satisfies": [
+            "SWR-GEN-001",
+            "SWR-THP-007"
+          ],
+          "satisfies_unconfirmed": [
+            "REQ_BTP_TEMPERATURE_RANGE"
+          ],
+          "swcraft_path": "interfaces/IBrakeTemperature.yaml",
+          "tags": [
+            "interface"
+          ],
+          "title": "IBrakeTemperature",
+          "type": "arch_element"
+        },
+        "IF-INvStorage": {
+          "content": "The platform's non-volatile storage service, declared outside this project.",
+          "id": "IF-INvStorage",
+          "satisfies": [
+            "REQ_BTP_DIAGNOSTICS"
+          ],
+          "swcraft_path": "interfaces/INvStorage.yaml",
+          "tags": [
+            "interface"
+          ],
+          "title": "INvStorage",
+          "type": "arch_element"
+        },
+        "IF-IThermalProtectionStatus": {
+          "content": "",
+          "id": "IF-IThermalProtectionStatus",
+          "satisfies_unconfirmed": [
+            "REQ_BTP_TEMPERATURE_RANGE"
+          ],
+          "swcraft_path": "interfaces/IThermalProtectionStatus.yaml",
+          "tags": [
+            "interface"
+          ],
+          "title": "IThermalProtectionStatus",
+          "type": "arch_element"
+        },
+        "PORT-BrakeController-pBrakeRequest": {
+          "content": "",
+          "id": "PORT-BrakeController-pBrakeRequest",
+          "satisfies": [
+            "REQ_SHOWCASE_BASELINE_001"
+          ],
+          "swcraft_path": "swc/application/BrakeController.yaml",
+          "tags": [
+            "port"
+          ],
+          "title": "BrakeController.pBrakeRequest",
+          "type": "arch_element"
+        },
+        "PORT-BrakeController-rPermittedBrakeAction": {
+          "content": "",
+          "id": "PORT-BrakeController-rPermittedBrakeAction",
+          "satisfies": [
+            "SWR-BRK-003"
+          ],
+          "swcraft_path": "swc/application/BrakeController.yaml",
+          "tags": [
+            "port"
+          ],
+          "title": "BrakeController.rPermittedBrakeAction",
+          "type": "arch_element"
+        },
+        "PORT-BrakeController-rRearBrakeTemperature": {
+          "content": "The rear brake temperature, from the second occurrence of the sensor type on the chassis.",
+          "id": "PORT-BrakeController-rRearBrakeTemperature",
+          "satisfies": [
+            "SWR-BRK-004"
+          ],
+          "swcraft_path": "swc/application/BrakeController.yaml",
+          "tags": [
+            "port"
+          ],
+          "title": "BrakeController.rRearBrakeTemperature",
+          "type": "arch_element"
+        },
+        "PORT-BrakeTemperatureSensor-pBrakeTemperature": {
+          "content": "",
+          "id": "PORT-BrakeTemperatureSensor-pBrakeTemperature",
+          "satisfies": [
+            "REQ_SHOWCASE_BASELINE_001"
+          ],
+          "swcraft_path": "swc/application/BrakeTemperatureSensor.yaml",
+          "tags": [
+            "port"
+          ],
+          "title": "BrakeTemperatureSensor.pBrakeTemperature",
+          "type": "arch_element"
+        },
+        "PORT-BrakeThermalProtection-pPermittedBrakeAction": {
+          "content": "",
+          "id": "PORT-BrakeThermalProtection-pPermittedBrakeAction",
+          "satisfies": [
+            "REQ_SHOWCASE_FEATURE_001"
+          ],
+          "satisfies_unconfirmed": [
+            "SWR-THP-003"
+          ],
+          "swcraft_path": "swc/application/BrakeThermalProtection.yaml",
+          "tags": [
+            "port"
+          ],
+          "title": "BrakeThermalProtection.pPermittedBrakeAction",
+          "type": "arch_element"
+        },
+        "PORT-BrakeThermalProtection-pThermalProtectionEvent": {
+          "content": "",
+          "id": "PORT-BrakeThermalProtection-pThermalProtectionEvent",
+          "satisfies": [
+            "SWR-THP-005"
+          ],
+          "swcraft_path": "swc/application/BrakeThermalProtection.yaml",
+          "tags": [
+            "port"
+          ],
+          "title": "BrakeThermalProtection.pThermalProtectionEvent",
+          "type": "arch_element"
+        },
+        "PORT-BrakeThermalProtection-pThermalProtectionStatus": {
+          "content": "",
+          "id": "PORT-BrakeThermalProtection-pThermalProtectionStatus",
+          "satisfies": [
+            "SWR-THP-004"
+          ],
+          "swcraft_path": "swc/application/BrakeThermalProtection.yaml",
+          "tags": [
+            "port"
+          ],
+          "title": "BrakeThermalProtection.pThermalProtectionStatus",
+          "type": "arch_element"
+        },
+        "PORT-BrakeThermalProtection-rBrakeTemperature": {
+          "content": "",
+          "id": "PORT-BrakeThermalProtection-rBrakeTemperature",
+          "satisfies": [
+            "SWR-THP-009"
+          ],
+          "swcraft_path": "swc/application/BrakeThermalProtection.yaml",
+          "tags": [
+            "port"
+          ],
+          "title": "BrakeThermalProtection.rBrakeTemperature",
+          "type": "arch_element"
+        },
+        "PORT-BrakeThermalProtection-rOperatingState": {
+          "content": "A QM signal read by an ASIL B component.",
+          "id": "PORT-BrakeThermalProtection-rOperatingState",
+          "satisfies": [
+            "SWR-THP-008"
+          ],
+          "swcraft_path": "swc/application/BrakeThermalProtection.yaml",
+          "tags": [
+            "port"
+          ],
+          "title": "BrakeThermalProtection.rOperatingState",
+          "type": "arch_element"
+        },
+        "PORT-DiagnosticManager-pBrakeDiagnostics": {
+          "content": "",
+          "id": "PORT-DiagnosticManager-pBrakeDiagnostics",
+          "satisfies": [
+            "REQ_SHOWCASE_BASELINE_002",
+            "SWR-DIA-004"
+          ],
+          "swcraft_path": "swc/application/DiagnosticManager.yaml",
+          "tags": [
+            "port"
+          ],
+          "title": "DiagnosticManager.pBrakeDiagnostics",
+          "type": "arch_element"
+        },
+        "PORT-DiagnosticManager-rEcuMode": {
+          "content": "",
+          "id": "PORT-DiagnosticManager-rEcuMode",
+          "satisfies": [
+            "SWR-DIA-005"
+          ],
+          "swcraft_path": "swc/application/DiagnosticManager.yaml",
+          "tags": [
+            "port"
+          ],
+          "title": "DiagnosticManager.rEcuMode",
+          "type": "arch_element"
+        },
+        "PORT-DiagnosticManager-rNvStorage": {
+          "content": "",
+          "id": "PORT-DiagnosticManager-rNvStorage",
+          "satisfies": [
+            "SWR-DIA-002",
+            "SWR-DIA-006"
+          ],
+          "swcraft_path": "swc/application/DiagnosticManager.yaml",
+          "tags": [
+            "port"
+          ],
+          "title": "DiagnosticManager.rNvStorage",
+          "type": "arch_element"
+        },
+        "PORT-DiagnosticManager-rThermalProtectionEvent": {
+          "content": "",
+          "id": "PORT-DiagnosticManager-rThermalProtectionEvent",
+          "satisfies": [
+            "REQ_BTP_DIAGNOSTICS"
+          ],
+          "swcraft_path": "swc/application/DiagnosticManager.yaml",
+          "tags": [
+            "port"
+          ],
+          "title": "DiagnosticManager.rThermalProtectionEvent",
+          "type": "arch_element"
+        },
+        "PORT-InstrumentCluster-rBrakeDiagnostics": {
+          "content": "",
+          "id": "PORT-InstrumentCluster-rBrakeDiagnostics",
+          "satisfies": [
+            "SWR-DRV-003"
+          ],
+          "swcraft_path": "swc/application/InstrumentCluster.yaml",
+          "tags": [
+            "port"
+          ],
+          "title": "InstrumentCluster.rBrakeDiagnostics",
+          "type": "arch_element"
+        },
+        "PORT-InstrumentCluster-rOdometer": {
+          "content": "",
+          "id": "PORT-InstrumentCluster-rOdometer",
+          "satisfies": [
+            "SWR-DRV-004"
+          ],
+          "swcraft_path": "swc/application/InstrumentCluster.yaml",
+          "tags": [
+            "port"
+          ],
+          "title": "InstrumentCluster.rOdometer",
+          "type": "arch_element"
+        },
+        "PORT-InstrumentCluster-rThermalProtectionStatus": {
+          "content": "",
+          "id": "PORT-InstrumentCluster-rThermalProtectionStatus",
+          "satisfies": [
+            "SWR-DRV-001"
+          ],
+          "swcraft_path": "swc/application/InstrumentCluster.yaml",
+          "tags": [
+            "port"
+          ],
+          "title": "InstrumentCluster.rThermalProtectionStatus",
+          "type": "arch_element"
+        },
+        "PORT-VehicleStateManager-pOperatingState": {
+          "content": "",
+          "id": "PORT-VehicleStateManager-pOperatingState",
+          "satisfies": [
+            "REQ_SHOWCASE_BASELINE_001"
+          ],
+          "swcraft_path": "swc/application/VehicleStateManager.yaml",
+          "tags": [
+            "port"
+          ],
+          "title": "VehicleStateManager.pOperatingState",
+          "type": "arch_element"
+        },
+        "REQ_BTP_CORE_LOAD": {
+          "content": "Design constraint: the worst-case load of each core of the processor, the sum over the tasks that run on it of wcet divided by period, shall stay at or below the core's budget, 70 % on Core0 and 60 % on Core1, enforced strictly.",
+          "id": "REQ_BTP_CORE_LOAD",
+          "swcraft_path": "requirements/REQ_BTP_CORE_LOAD.yaml",
+          "tags": [],
+          "title": "Each core stays within its load budget",
+          "type": "arch_spec"
+        },
+        "REQ_BTP_DECOMP_MAIN": {
+          "asil": "B(D)",
+          "content": "B(D) decomposition of REQ_BTP_SAFETY_GOAL, main channel: the sensor measures the brake temperature and the controller applies only the permitted brake action.",
+          "derived_from": [
+            "REQ_BTP_SAFETY_GOAL"
+          ],
+          "id": "REQ_BTP_DECOMP_MAIN",
+          "swcraft_path": "requirements/REQ_BTP_DECOMP_MAIN.yaml",
+          "tags": [],
+          "title": "Main channel measures the temperature and applies the brake request",
+          "type": "arch_spec"
+        },
+        "REQ_BTP_DECOMP_MONITOR": {
+          "asil": "B(D)",
+          "content": "B(D) decomposition of REQ_BTP_SAFETY_GOAL, monitor channel: the thermal protection derates the permitted brake action when the brake temperature rises. The independence a decomposition assumes is not modelled: both channels run in Task_50ms on Core1, and the monitor reads the main channel's brake temperature.",
+          "derived_from": [
+            "REQ_BTP_SAFETY_GOAL"
+          ],
+          "id": "REQ_BTP_DECOMP_MONITOR",
+          "swcraft_path": "requirements/REQ_BTP_DECOMP_MONITOR.yaml",
+          "tags": [],
+          "title": "Monitor channel limits the permitted brake action",
+          "type": "arch_spec"
+        },
+        "REQ_BTP_DIAGNOSTICS": {
+          "asil": "A",
+          "content": "The diagnostics record every thermal protection event and store a snapshot in non-volatile memory.",
+          "id": "REQ_BTP_DIAGNOSTICS",
+          "swcraft_path": "requirements/REQ_BTP_DIAGNOSTICS.yaml",
+          "tags": [],
+          "title": "Record thermal protection events",
+          "type": "arch_spec"
+        },
+        "REQ_BTP_EXECUTION_CONTEXT": {
+          "content": "Design constraint: the runnables of both decomposed channels shall run in a partition rated at least ASIL B, on a core whose ASIL capability is at least the partition's level, and the memory they use shall be capable of at least ASIL B.",
+          "derived_from": [
+            "REQ_BTP_DECOMP_MAIN",
+            "REQ_BTP_DECOMP_MONITOR"
+          ],
+          "id": "REQ_BTP_EXECUTION_CONTEXT",
+          "swcraft_path": "requirements/REQ_BTP_EXECUTION_CONTEXT.yaml",
+          "tags": [],
+          "title": "Both channels run in an ASIL B context",
+          "type": "arch_spec"
+        },
+        "REQ_BTP_TEMPERATURE_RANGE": {
+          "content": "Design constraint: every interface that carries the brake temperature shall carry it in degrees Celsius over the physical range -40 degC to 1000 degC at a resolution of 0.1 degC, both ends of the range included.",
+          "derived_from": [
+            "REQ_BTP_DECOMP_MAIN",
+            "REQ_BTP_DECOMP_MONITOR"
+          ],
+          "id": "REQ_BTP_TEMPERATURE_RANGE",
+          "swcraft_path": "requirements/REQ_BTP_TEMPERATURE_RANGE.yaml",
+          "tags": [],
+          "title": "The brake temperature is carried from -40 to 1000 degC at 0.1 degC",
+          "type": "arch_spec"
+        },
+        "RUN-BrakeController-ProcessBrakeRequest": {
+          "content": "",
+          "id": "RUN-BrakeController-ProcessBrakeRequest",
+          "satisfies": [
+            "SWR-BRK-001"
+          ],
+          "swcraft_path": "swc/application/BrakeController.yaml",
+          "tags": [
+            "runnable"
+          ],
+          "title": "BrakeController.ProcessBrakeRequest",
+          "type": "arch_element"
+        },
+        "RUN-BrakeTemperatureSensor-PublishBrakeTemperature": {
+          "content": "",
+          "id": "RUN-BrakeTemperatureSensor-PublishBrakeTemperature",
+          "satisfies": [
+            "SWR-THP-006"
+          ],
+          "swcraft_path": "swc/application/BrakeTemperatureSensor.yaml",
+          "tags": [
+            "runnable"
+          ],
+          "title": "BrakeTemperatureSensor.PublishBrakeTemperature",
+          "type": "arch_element"
+        },
+        "RUN-BrakeThermalProtection-EvaluateThermalProtection": {
+          "content": "Compares the brake temperature against the derating thresholds and publishes the permitted action.",
+          "id": "RUN-BrakeThermalProtection-EvaluateThermalProtection",
+          "satisfies": [
+            "REQ_SHOWCASE_FEATURE_001",
+            "SWR-THP-001",
+            "SWR-THP-012"
+          ],
+          "swcraft_path": "swc/application/BrakeThermalProtection.yaml",
+          "tags": [
+            "runnable"
+          ],
+          "title": "BrakeThermalProtection.EvaluateThermalProtection",
+          "type": "arch_element"
+        },
+        "RUN-BrakeThermalProtection-InitThermalProtection": {
+          "content": "",
+          "id": "RUN-BrakeThermalProtection-InitThermalProtection",
+          "satisfies": [
+            "SWR-THP-002"
+          ],
+          "swcraft_path": "swc/application/BrakeThermalProtection.yaml",
+          "tags": [
+            "runnable"
+          ],
+          "title": "BrakeThermalProtection.InitThermalProtection",
+          "type": "arch_element"
+        },
+        "RUN-DiagnosticManager-ConfirmSnapshotStored": {
+          "content": "Records whether the non-volatile storage stored the snapshot ProcessDiagnosticEvent started writing.",
+          "id": "RUN-DiagnosticManager-ConfirmSnapshotStored",
+          "satisfies": [
+            "REQ_BTP_DIAGNOSTICS"
+          ],
+          "swcraft_path": "swc/application/DiagnosticManager.yaml",
+          "tags": [
+            "runnable"
+          ],
+          "title": "DiagnosticManager.ConfirmSnapshotStored",
+          "type": "arch_element"
+        },
+        "RUN-DiagnosticManager-ProcessDiagnosticEvent": {
+          "content": "",
+          "id": "RUN-DiagnosticManager-ProcessDiagnosticEvent",
+          "satisfies": [
+            "REQ_BTP_DIAGNOSTICS",
+            "SWR-DIA-001",
+            "SWR-DIA-007"
+          ],
+          "swcraft_path": "swc/application/DiagnosticManager.yaml",
+          "tags": [
+            "runnable"
+          ],
+          "title": "DiagnosticManager.ProcessDiagnosticEvent",
+          "type": "arch_element"
+        },
+        "RUN-DiagnosticManager-ServeSnapshot": {
+          "content": "",
+          "id": "RUN-DiagnosticManager-ServeSnapshot",
+          "satisfies": [
+            "SWR-DIA-003"
+          ],
+          "swcraft_path": "swc/application/DiagnosticManager.yaml",
+          "tags": [
+            "runnable"
+          ],
+          "title": "DiagnosticManager.ServeSnapshot",
+          "type": "arch_element"
+        },
+        "RUN-InstrumentCluster-UpdateThermalStatus": {
+          "content": "",
+          "id": "RUN-InstrumentCluster-UpdateThermalStatus",
+          "satisfies": [
+            "SWR-DRV-002"
+          ],
+          "swcraft_path": "swc/application/InstrumentCluster.yaml",
+          "tags": [
+            "runnable"
+          ],
+          "title": "InstrumentCluster.UpdateThermalStatus",
+          "type": "arch_element"
+        },
+        "RUN-VehicleStateManager-PublishOperatingState": {
+          "content": "",
+          "id": "RUN-VehicleStateManager-PublishOperatingState",
+          "satisfies": [
+            "SWR-DRV-007"
+          ],
+          "swcraft_path": "swc/application/VehicleStateManager.yaml",
+          "tags": [
+            "runnable"
+          ],
+          "title": "VehicleStateManager.PublishOperatingState",
+          "type": "arch_element"
+        },
+        "SWC-BrakeController": {
+          "content": "",
+          "id": "SWC-BrakeController",
+          "satisfies": [
+            "REQ_BTP_DECOMP_MAIN",
+            "SWR-BRK-008",
+            "SWR-BRK-002",
+            "SWR-BRK-005",
+            "SWR-BRK-007",
+            "SWR-BRK-009",
+            "SWR-BRK-010",
+            "SWR-BRK-012"
+          ],
+          "swcraft_path": "swc/application/BrakeController.yaml",
+          "tags": [
+            "swc"
+          ],
+          "title": "BrakeController",
+          "type": "arch_element"
+        },
+        "SWC-BrakeTemperatureSensor": {
+          "content": "",
+          "id": "SWC-BrakeTemperatureSensor",
+          "satisfies": [
+            "REQ_BTP_DECOMP_MAIN"
+          ],
+          "swcraft_path": "swc/application/BrakeTemperatureSensor.yaml",
+          "tags": [
+            "swc"
+          ],
+          "title": "BrakeTemperatureSensor",
+          "type": "arch_element"
+        },
+        "SWC-BrakeThermalProtection": {
+          "content": "Derates the permitted brake action when the brake temperature rises, and reports the thermal state.",
+          "id": "SWC-BrakeThermalProtection",
+          "satisfies": [
+            "REQ_BTP_DECOMP_MONITOR",
+            "SWR-THP-011"
+          ],
+          "swcraft_path": "swc/application/BrakeThermalProtection.yaml",
+          "tags": [
+            "swc"
+          ],
+          "title": "BrakeThermalProtection",
+          "type": "arch_element"
+        },
+        "SWC-DiagnosticManager": {
+          "content": "",
+          "id": "SWC-DiagnosticManager",
+          "satisfies": [
+            "SWR-BRK-012",
+            "SWR-DIA-008"
+          ],
+          "swcraft_path": "swc/application/DiagnosticManager.yaml",
+          "tags": [
+            "swc"
+          ],
+          "title": "DiagnosticManager",
+          "type": "arch_element"
+        },
+        "SWC-InstrumentCluster": {
+          "content": "",
+          "id": "SWC-InstrumentCluster",
+          "satisfies": [
+            "REQ_SHOWCASE_BASELINE_002"
+          ],
+          "swcraft_path": "swc/application/InstrumentCluster.yaml",
+          "tags": [
+            "swc"
+          ],
+          "title": "InstrumentCluster",
+          "type": "arch_element"
+        },
+        "SWC-NvM": {
+          "content": "The platform's non-volatile memory manager, declared outside this project.",
+          "id": "SWC-NvM",
+          "satisfies": [
+            "REQ_BTP_DIAGNOSTICS"
+          ],
+          "swcraft_path": "swc/basic_software/NvM.yaml",
+          "tags": [
+            "swc"
+          ],
+          "title": "NvM",
+          "type": "arch_element"
+        },
+        "SWC-VehicleStateManager": {
+          "content": "",
+          "id": "SWC-VehicleStateManager",
+          "satisfies": [
+            "SWR-DRV-008"
+          ],
+          "swcraft_path": "swc/application/VehicleStateManager.yaml",
+          "tags": [
+            "swc"
+          ],
+          "title": "VehicleStateManager",
+          "type": "arch_element"
+        },
+        "TASK-Task_100ms": {
+          "content": "The 100 ms task that publishes the vehicle state, processes diagnostic events and updates the instrument cluster.",
+          "id": "TASK-Task_100ms",
+          "satisfies": [
+            "REQ_BTP_CORE_LOAD"
+          ],
+          "swcraft_path": "tasks/Task_100ms.yaml",
+          "tags": [
+            "task"
+          ],
+          "title": "Task_100ms",
+          "type": "arch_element"
+        },
+        "TASK-Task_100ms_Low": {
+          "content": "A second 100 ms task in the vehicle partition, below Task_100ms in priority, with no runnable mapped yet; it gives a runnable of the partition somewhere to move without leaving its partition.",
+          "id": "TASK-Task_100ms_Low",
+          "satisfies": [
+            "REQ_BTP_CORE_LOAD"
+          ],
+          "swcraft_path": "tasks/Task_100ms_Low.yaml",
+          "tags": [
+            "task"
+          ],
+          "title": "Task_100ms_Low",
+          "type": "arch_element"
+        },
+        "TASK-Task_50ms": {
+          "content": "",
+          "id": "TASK-Task_50ms",
+          "satisfies": [
+            "REQ_BTP_CORE_LOAD",
+            "REQ_BTP_EXECUTION_CONTEXT",
+            "SWR-BRK-006"
+          ],
+          "swcraft_path": "tasks/Task_50ms.yaml",
+          "tags": [
+            "task"
+          ],
+          "title": "Task_50ms",
+          "type": "arch_element"
+        }
+      },
+      "needs_amount": 52
+    }
+  }
+}

@@ -1,0 +1,43 @@
+name: Chassis
+title: Chassis
+description: >-
+  The chassis level: the brake controller, the rear brake sensor and the brake
+  subsystem, connected to each other here, with the operating state coming in
+  and the thermal status and events going out through the chassis boundary.
+
+ports:
+  - name: rOperatingState
+    direction: require
+    interface: IVehicleOperatingState
+  - name: pThermalProtectionStatus
+    direction: provide
+    interface: IThermalProtectionStatus
+  - name: pThermalProtectionEvent
+    direction: provide
+    interface: IThermalProtectionEvent
+
+members:
+  - name: BrakeSubsystem
+    composition: BrakeSubsystem
+  - name: BrakeController
+    type: BrakeController
+  - name: RearBrakeSensor
+    type: BrakeTemperatureSensor
+    description: The rear occurrence of the sensor type; the front one is inside the brake subsystem.
+
+delegations:
+  - name: DelegateOperatingState
+    port: rOperatingState
+    member: BrakeSubsystem
+    member_port: rOperatingState
+  - name: DelegateThermalStatus
+    port: pThermalProtectionStatus
+    member: BrakeSubsystem
+    member_port: pThermalProtectionStatus
+  - name: DelegateThermalEvent
+    port: pThermalProtectionEvent
+    member: BrakeSubsystem
+    member_port: pThermalProtectionEvent
+
+satisfies:
+  - REQ_BTP_SAFETY_GOAL@1

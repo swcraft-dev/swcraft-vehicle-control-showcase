@@ -1,0 +1,14 @@
+name: VehicleOperatingState_Values
+kind: texttable
+entries:
+- name: "OFF"
+  value: 0
+  description: The vehicle is switched off.
+- name: STANDBY
+  value: 1
+  description: The vehicle is powered and stationary.
+- name: DRIVING
+  value: 2
+  description: The vehicle is being driven.
+description: The values of the vehicle operating state.
+package: Vehicle

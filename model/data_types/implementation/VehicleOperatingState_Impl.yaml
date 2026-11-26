@@ -1,0 +1,5 @@
+name: VehicleOperatingState_Impl
+kind: value_type
+base: uint8_base
+compu_method_ref: VehicleOperatingState_Values
+description: Stored vehicle operating state, one byte read through the operating state table.

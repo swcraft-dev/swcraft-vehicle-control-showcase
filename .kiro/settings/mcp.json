@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "swcraft": {
+      "command": "swcraft",
+      "args": ["mcp-serve", "--project", "swcraft.yaml"],
+      "env": {
+        "SWCRAFT_REVIEW": "panel"
+      }
+    }
+  }
+}

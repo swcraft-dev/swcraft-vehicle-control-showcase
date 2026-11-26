@@ -1,0 +1,7 @@
+name: IPermittedBrakeAction
+kind: sender_receiver
+data_elements:
+- name: permittedAction
+  application_type: ThermalProtectionState
+  asil: B
+  init: NORMAL

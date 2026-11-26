@@ -1,0 +1,7 @@
+name: DiagnosticsToCluster
+from:
+  swc: DiagnosticManager
+  port: pBrakeDiagnostics
+to:
+  swc: InstrumentCluster
+  port: rBrakeDiagnostics

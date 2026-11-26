@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Vehicle control software requirements, delivery 1.1 &#8212; Vehicle control software requirements (synthetic)  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=8203d6f3" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=2c6a083b" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-data-viewer/jsonview.bundle.css?v=f6ef2277" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-needs/common_css/need_core.css?v=f5b60a78" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-needs/common_css/need_links.css?v=2150a916" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-needs/common_css/need_style.css?v=92936fa5" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-needs/common_css/need_toggle.css?v=5c6620df" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-needs/common_css/needstable.css?v=7b67799e" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-needs/modern.css?v=c1bc121d" />
+    <script src="_static/jquery.js?v=5d32c60e"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/sphinx-data-viewer/jsonview.bundle.js?v=18cd53c5"></script>
+    <script src="_static/sphinx-data-viewer/jsonview_loader.js?v=f7ff7e7d"></script>
+    <script src="_static/sphinx-needs/libs/html/sphinx_needs_collapse.js?v=dca66431"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="vehicle-control-software-requirements-delivery-1-1">
+<h1>Vehicle control software requirements, delivery 1.1<a class="headerlink" href="#vehicle-control-software-requirements-delivery-1-1" title="Link to this heading">¶</a></h1>
+<p>The requirements team’s software requirements for the vehicle control architecture.
+Synthetic, derived from no real project.</p>
+<section id="srs-brake-control">
+<h2>SRS Brake Control<a class="headerlink" href="#srs-brake-control" title="Link to this heading">¶</a></h2>
+<div class="need_container docutils container" id="SNCB-6772350f">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-BRK-001">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Brake request processing</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-BRK-001" title="SWR-BRK-001">SWR-BRK-001</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Brake Control</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/BrakeController.yaml">RUN-BrakeController-ProcessBrakeRequest</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The brake controller shall process every brake request within one control cycle.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-9cae2e94">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-BRK-002">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Brake request input</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-BRK-002" title="SWR-BRK-002">SWR-BRK-002</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Brake Control</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/BrakeController.yaml">SWC-BrakeController</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The brake controller shall receive the brake request from the pedal interface.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-a5c5e911">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-BRK-003">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Permitted brake action applied</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-BRK-003" title="SWR-BRK-003">SWR-BRK-003</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Brake Control</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/BrakeController.yaml">PORT-BrakeController-rPermittedBrakeAction</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The brake controller shall apply only the permitted brake action.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-8edbe362">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-BRK-004">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Rear brake temperature use</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-BRK-004" title="SWR-BRK-004">SWR-BRK-004</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Brake Control</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/BrakeController.yaml">PORT-BrakeController-rRearBrakeTemperature</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The brake controller shall read the rear brake temperature before each brake request is processed.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-37adf8ea">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-BRK-005">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Brake request rejection</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-BRK-005" title="SWR-BRK-005">SWR-BRK-005</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Brake Control</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/BrakeController.yaml">SWC-BrakeController</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>A brake request that exceeds the permitted brake action shall be limited, not rejected.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-68a3c571">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-BRK-006">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Brake request timing</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-BRK-006" title="SWR-BRK-006">SWR-BRK-006</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Brake Control</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=tasks/Task_50ms.yaml">TASK-Task_50ms</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>Processing of a brake request shall complete within 10 ms.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-bd6750a0">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-BRK-007">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Brake request plausibility</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-BRK-007" title="SWR-BRK-007">SWR-BRK-007</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Brake Control</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/BrakeController.yaml">SWC-BrakeController</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The brake request shall be checked for plausibility against the operating state.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-85ccbcbc">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-BRK-008">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Brake pressure ramp</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-BRK-008" title="SWR-BRK-008">SWR-BRK-008</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Brake Control</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/BrakeController.yaml">SWC-BrakeController</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The brake pressure shall ramp up at no more than 200 bar/s.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-4262a847">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-BRK-009">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Brake controller start</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-BRK-009" title="SWR-BRK-009">SWR-BRK-009</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Brake Control</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/BrakeController.yaml">SWC-BrakeController</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The brake controller shall be ready to process a brake request 50 ms after start.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-804d6ac1">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-BRK-010">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Brake controller degraded mode</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-BRK-010" title="SWR-BRK-010">SWR-BRK-010</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Brake Control</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/BrakeController.yaml">SWC-BrakeController</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>In degraded mode the brake controller shall keep the last permitted brake action.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-79e04cd0">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-BRK-012">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Brake request logging</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-BRK-012" title="SWR-BRK-012">SWR-BRK-012</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Brake Control</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/BrakeController.yaml">SWC-BrakeController</a>, <a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/DiagnosticManager.yaml">SWC-DiagnosticManager</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>Each rejected brake request shall be reported to diagnostics.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="srs-thermal-protection">
+<h2>SRS Thermal Protection<a class="headerlink" href="#srs-thermal-protection" title="Link to this heading">¶</a></h2>
+<div class="need_container docutils container" id="SNCB-c55f6fd6">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-THP-001">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Thermal protection evaluation</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-THP-001" title="SWR-THP-001">SWR-THP-001</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Thermal Protection</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/BrakeThermalProtection.yaml">RUN-BrakeThermalProtection-EvaluateThermalProtection</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>Thermal protection shall be evaluated every 50 ms from the brake temperature.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-a452e6f5">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-THP-002">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Thermal protection initialisation</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-THP-002" title="SWR-THP-002">SWR-THP-002</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Thermal Protection</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/BrakeThermalProtection.yaml">RUN-BrakeThermalProtection-InitThermalProtection</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>Thermal protection shall be initialised at start with a cold brake assumption.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-73baebfd">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-THP-003">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Permitted action under fade</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-THP-003" title="SWR-THP-003">SWR-THP-003</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">2</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Thermal Protection</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by (unconfirmed): <span class="satisfies_unconfirmed"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/BrakeThermalProtection.yaml">PORT-BrakeThermalProtection-pPermittedBrakeAction</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>When the brake temperature exceeds 650 degC the permitted brake action shall be reduced.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-8afd0284">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-THP-004">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Thermal protection status</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-THP-004" title="SWR-THP-004">SWR-THP-004</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Thermal Protection</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/BrakeThermalProtection.yaml">PORT-BrakeThermalProtection-pThermalProtectionStatus</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The thermal protection status shall be published to the instrument cluster.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-f6f46e11">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-THP-005">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Thermal protection event</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-THP-005" title="SWR-THP-005">SWR-THP-005</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Thermal Protection</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/BrakeThermalProtection.yaml">PORT-BrakeThermalProtection-pThermalProtectionEvent</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>A thermal protection event shall be raised when the permitted brake action is reduced.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-297063c2">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-THP-006">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Brake temperature publication</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-THP-006" title="SWR-THP-006">SWR-THP-006</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Thermal Protection</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/BrakeTemperatureSensor.yaml">RUN-BrakeTemperatureSensor-PublishBrakeTemperature</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The brake temperature sensor shall publish the brake temperature every 50 ms.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-f5f94a57">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-THP-007">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Brake temperature range</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-THP-007" title="SWR-THP-007">SWR-THP-007</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Thermal Protection</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=interfaces/IBrakeTemperature.yaml">IF-IBrakeTemperature</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The brake temperature shall be carried from -40 degC to 1000 degC.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-445a8049">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-THP-008">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Operating state use</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-THP-008" title="SWR-THP-008">SWR-THP-008</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Thermal Protection</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/BrakeThermalProtection.yaml">PORT-BrakeThermalProtection-rOperatingState</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>Thermal protection shall take the vehicle operating state into account.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-9c35c8ea">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-THP-009">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Temperature sensor fault</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-THP-009" title="SWR-THP-009">SWR-THP-009</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Thermal Protection</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/BrakeThermalProtection.yaml">PORT-BrakeThermalProtection-rBrakeTemperature</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>A brake temperature sensor fault shall set the thermal protection status to unknown.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-554bebde">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-THP-010">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Cooling estimate</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-THP-010" title="SWR-THP-010">SWR-THP-010</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Thermal Protection</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The cooling of the brake disc shall be estimated from vehicle speed.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-587c24fe">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-THP-011">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Fade warning threshold</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-THP-011" title="SWR-THP-011">SWR-THP-011</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Thermal Protection</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/BrakeThermalProtection.yaml">SWC-BrakeThermalProtection</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The fade warning threshold shall be calibratable.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-4c5f349e">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-THP-012">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Thermal protection recovery</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-THP-012" title="SWR-THP-012">SWR-THP-012</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Thermal Protection</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/BrakeThermalProtection.yaml">RUN-BrakeThermalProtection-EvaluateThermalProtection</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>Thermal protection shall restore the full permitted brake action below 400 degC.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="srs-diagnostics">
+<h2>SRS Diagnostics<a class="headerlink" href="#srs-diagnostics" title="Link to this heading">¶</a></h2>
+<div class="need_container docutils container" id="SNCB-6d8fa793">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-DIA-001">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Diagnostic event processing</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-DIA-001" title="SWR-DIA-001">SWR-DIA-001</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Diagnostics</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/DiagnosticManager.yaml">RUN-DiagnosticManager-ProcessDiagnosticEvent</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The diagnostic manager shall process every thermal protection event.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-d700f7e6">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-DIA-002">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Snapshot storage</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-DIA-002" title="SWR-DIA-002">SWR-DIA-002</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Diagnostics</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/DiagnosticManager.yaml">PORT-DiagnosticManager-rNvStorage</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>On a thermal protection event the diagnostic manager shall store a snapshot in non-volatile storage.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-b4c7da2b">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-DIA-003">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Snapshot read service</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-DIA-003" title="SWR-DIA-003">SWR-DIA-003</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Diagnostics</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/DiagnosticManager.yaml">RUN-DiagnosticManager-ServeSnapshot</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The diagnostic manager shall serve a read snapshot request from the tester.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-9627e7d6">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-DIA-004">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Brake diagnostics publication</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-DIA-004" title="SWR-DIA-004">SWR-DIA-004</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Diagnostics</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/DiagnosticManager.yaml">PORT-DiagnosticManager-pBrakeDiagnostics</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>Brake diagnostics shall be published to the instrument cluster.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-f45bb2d3">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-DIA-005">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">ECU mode dependency</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-DIA-005" title="SWR-DIA-005">SWR-DIA-005</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Diagnostics</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/DiagnosticManager.yaml">PORT-DiagnosticManager-rEcuMode</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>Diagnostic events shall not be stored while the ECU mode is shutdown.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-32a59922">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-DIA-006">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">NvM write retry</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-DIA-006" title="SWR-DIA-006">SWR-DIA-006</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Diagnostics</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/DiagnosticManager.yaml">PORT-DiagnosticManager-rNvStorage</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>A failed non-volatile storage write shall be retried once.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-69e7673c">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-DIA-007">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Snapshot content</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-DIA-007" title="SWR-DIA-007">SWR-DIA-007</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Diagnostics</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/DiagnosticManager.yaml">RUN-DiagnosticManager-ProcessDiagnosticEvent</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>A snapshot shall hold the brake temperature and the permitted brake action.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-cd93e9c6">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-DIA-008">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Event debouncing</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-DIA-008" title="SWR-DIA-008">SWR-DIA-008</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Diagnostics</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/DiagnosticManager.yaml">SWC-DiagnosticManager</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>A diagnostic event shall be debounced over three evaluation cycles.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-3373f5c8">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-DIA-009">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">DTC clearing</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-DIA-009" title="SWR-DIA-009">SWR-DIA-009</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Diagnostics</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>Stored trouble codes shall be cleared only by a tester request.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-f065b99d">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-DIA-010">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Diagnostic session</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-DIA-010" title="SWR-DIA-010">SWR-DIA-010</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Diagnostics</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The extended diagnostic session shall time out after 5 s without a request.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="srs-driver-information">
+<h2>SRS Driver Information<a class="headerlink" href="#srs-driver-information" title="Link to this heading">¶</a></h2>
+<div class="need_container docutils container" id="SNCB-18712ac4">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-DRV-001">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Thermal status display</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-DRV-001" title="SWR-DRV-001">SWR-DRV-001</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Driver Information</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/InstrumentCluster.yaml">PORT-InstrumentCluster-rThermalProtectionStatus</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The instrument cluster shall display the thermal protection status.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-bbd95286">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-DRV-002">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Thermal status update</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-DRV-002" title="SWR-DRV-002">SWR-DRV-002</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Driver Information</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/InstrumentCluster.yaml">RUN-InstrumentCluster-UpdateThermalStatus</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The instrument cluster shall update the thermal status within 100 ms.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-56403090">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-DRV-003">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Brake diagnostics display</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-DRV-003" title="SWR-DRV-003">SWR-DRV-003</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Driver Information</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/InstrumentCluster.yaml">PORT-InstrumentCluster-rBrakeDiagnostics</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The instrument cluster shall show brake diagnostics to the driver.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-d73c8bfc">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-DRV-004">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Odometer display</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-DRV-004" title="SWR-DRV-004">SWR-DRV-004</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Driver Information</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/InstrumentCluster.yaml">PORT-InstrumentCluster-rOdometer</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The instrument cluster shall display the odometer.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-554112b0">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-DRV-005">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Warning lamp</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-DRV-005" title="SWR-DRV-005">SWR-DRV-005</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Driver Information</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>A brake fade warning lamp shall be lit while thermal protection is active.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-2d1c7cf7">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-DRV-006">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Display brightness</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-DRV-006" title="SWR-DRV-006">SWR-DRV-006</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Driver Information</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>Display brightness shall follow the ambient light sensor.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-51ecfbbc">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-DRV-007">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Operating state publication</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-DRV-007" title="SWR-DRV-007">SWR-DRV-007</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Driver Information</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/VehicleStateManager.yaml">RUN-VehicleStateManager-PublishOperatingState</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The vehicle state manager shall publish the operating state every 100 ms.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-f2321010">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-DRV-008">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Operating state start</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-DRV-008" title="SWR-DRV-008">SWR-DRV-008</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">SRS Driver Information</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/VehicleStateManager.yaml">SWC-VehicleStateManager</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The operating state shall be valid 100 ms after ignition on.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="bl-showcase-001">
+<h2>BL-SHOWCASE-001<a class="headerlink" href="#bl-showcase-001" title="Link to this heading">¶</a></h2>
+<div class="need_container docutils container" id="SNCB-70863073">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="REQ_SHOWCASE_BASELINE_001">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Provide typed context signals</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_SHOWCASE_BASELINE_001" title="REQ_SHOWCASE_BASELINE_001">REQ_SHOWCASE_BASELINE_001</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">3</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">BL-SHOWCASE-001</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/BrakeController.yaml">PORT-BrakeController-pBrakeRequest</a>, <a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/BrakeTemperatureSensor.yaml">PORT-BrakeTemperatureSensor-pBrakeTemperature</a>, <a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/VehicleStateManager.yaml">PORT-VehicleStateManager-pOperatingState</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The architecture provides typed context signals for the showcase.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-5c8c672f">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="REQ_SHOWCASE_BASELINE_002">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Provide diagnostic and display endpoints</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_SHOWCASE_BASELINE_002" title="REQ_SHOWCASE_BASELINE_002">REQ_SHOWCASE_BASELINE_002</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">2</span></span></div>
+<div class="line"><span class="needs_document"><span class="needs_label">document: </span><span class="needs_data">BL-SHOWCASE-001</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/DiagnosticManager.yaml">PORT-DiagnosticManager-pBrakeDiagnostics</a>, <a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/InstrumentCluster.yaml">SWC-InstrumentCluster</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The architecture provides diagnostic and display endpoints for the showcase.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="requirements-without-a-document">
+<h2>Requirements without a document<a class="headerlink" href="#requirements-without-a-document" title="Link to this heading">¶</a></h2>
+<div class="need_container docutils container" id="SNCB-0bdb6cb9">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-GEN-001">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Brake temperature resolution</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-GEN-001" title="SWR-GEN-001">SWR-GEN-001</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=interfaces/IBrakeTemperature.yaml">IF-IBrakeTemperature</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The brake temperature shall have a resolution of 0.1 degC.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-026acf2b">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-GEN-002">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Core load limit</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-GEN-002" title="SWR-GEN-002">SWR-GEN-002</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=hardware/Core0.yaml">HW-Core0</a>, <a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=hardware/Core1.yaml">HW-Core1</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The core load shall stay below 70 percent.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-00feb2cf">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-GEN-003">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Service brake availability</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-GEN-003" title="SWR-GEN-003">SWR-GEN-003</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The service brake shall remain available after a single fault.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-05fcc85f">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="SWR-GEN-004">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Software update</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#SWR-GEN-004" title="SWR-GEN-004">SWR-GEN-004</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The software shall be updatable over the diagnostic interface.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-29525cb9">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_swreq docutils align-default" id="REQ_SHOWCASE_FEATURE_001">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Software requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Brake thermal protection evaluates and publishes</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_SHOWCASE_FEATURE_001" title="REQ_SHOWCASE_FEATURE_001">REQ_SHOWCASE_FEATURE_001</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">5</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/BrakeThermalProtection.yaml">PORT-BrakeThermalProtection-pPermittedBrakeAction</a>, <a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/BrakeThermalProtection.yaml">RUN-BrakeThermalProtection-EvaluateThermalProtection</a></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The brake thermal protection evaluates the brake temperature and publishes the permitted brake action, its status and its events.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-776682ca">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_sgoal docutils align-default" id="REQ_BTP_SAFETY_GOAL">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Safety goal</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Prevent brake fade from thermal overload</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_BTP_SAFETY_GOAL" title="REQ_BTP_SAFETY_GOAL">REQ_BTP_SAFETY_GOAL</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_safety"><span class="needs_label">safety: </span><span class="needs_data">D</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">4</span></span></div>
+</span></span></div>
+<div class="line"><span><div class="line">satisfied by: <span class="satisfies"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=compositions/Chassis.yaml">COMP-Chassis</a></span></span></div>
+<div class="line">derives: <span class="derived_from"><span><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=requirements/REQ_BTP_DECOMP_MAIN.yaml">REQ_BTP_DECOMP_MAIN</a>, <a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=requirements/REQ_BTP_DECOMP_MONITOR.yaml">REQ_BTP_DECOMP_MONITOR</a></span></span></div>
+<div class="line">parent: <span class="parent"><span><span class="needs_dead_link">HAZ_BTP_BRAKE_FADE</span></span></span></div>
+</span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>Safety goal: the brake system shall not lose braking capability because the brakes overheat. Decomposed into REQ_BTP_DECOMP_MAIN and REQ_BTP_DECOMP_MONITOR, each ASIL B(D). Illustrative.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="test-cases">
+<h2>Test cases<a class="headerlink" href="#test-cases" title="Link to this heading">¶</a></h2>
+<div class="need_container docutils container" id="SNCB-6d2d8780">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_test docutils align-default" id="TC-BRK-001">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Test case</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Brake request processing test</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#TC-BRK-001" title="TC-BRK-001">TC-BRK-001</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>Apply a brake request and check that it is processed within one control cycle.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-a726c53a">
+<table class="need needs_grid_simple needs_layout_clean needs_style_none needs_type_test docutils align-default" id="TC-THP-001">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Test case</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Fade derating test</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#TC-THP-001" title="TC-THP-001">TC-THP-001</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">approved</span></span></div>
+<div class="line"><span class="needs_rev"><span class="needs_label">rev: </span><span class="needs_data">1</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>Heat the brake above the derating threshold and check that the permitted brake action is reduced.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="architecture-requirements-swcraft">
+<h2>Architecture requirements (SWCraft)<a class="headerlink" href="#architecture-requirements-swcraft" title="Link to this heading">¶</a></h2>
+<div class="needstable_wrapper docutils container" id="needtable-index-0">
+<table class="NEEDS_TABLE docutils align-default" id="needtable-index-0-table_node">
+<colgroup>
+<col style="width: 14.3%" />
+<col style="width: 42.9%" />
+<col style="width: 14.3%" />
+<col style="width: 14.3%" />
+<col style="width: 14.3%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head needs_col_id" data-col="id" scope="col"><p>ID</p></th>
+<th class="head needs_col_title" data-col="title" scope="col"><p>Title</p></th>
+<th class="head needs_col_derived_from" data-col="derived_from" scope="col"><p>Derived from</p></th>
+<th class="head needs_col_satisfies_back" data-col="satisfies_back" scope="col"><p>Satisfied by</p></th>
+<th class="head needs_col_satisfies_unconfirmed_back" data-col="satisfies_unconfirmed_back" scope="col"><p>Satisfied by (unconfirmed)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="need row-even" data-need-id="REQ_BTP_CORE_LOAD"><td class="needs_id swcraft"><p><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=requirements/REQ_BTP_CORE_LOAD.yaml">REQ_BTP_CORE_LOAD</a></p></td>
+<td class="needs_title"><p>Each core stays within its load budget</p></td>
+<td class="needs_derived_from"><p></p></td>
+<td class="needs_satisfies_back swcraft"><p><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=hardware/Core0.yaml">HW-Core0</a><em>; </em><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=hardware/Core1.yaml">HW-Core1</a><em>; </em><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=hardware/CPU.yaml">HW-CPU</a><em>; </em><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=tasks/Task_50ms.yaml">TASK-Task_50ms</a><em>; </em><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=tasks/Task_100ms.yaml">TASK-Task_100ms</a><em>; </em><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=tasks/Task_100ms_Low.yaml">TASK-Task_100ms_Low</a></p></td>
+<td class="needs_satisfies_unconfirmed_back"><p></p></td>
+</tr>
+<tr class="need row-odd" data-need-id="REQ_BTP_DECOMP_MAIN"><td class="needs_id swcraft"><p><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=requirements/REQ_BTP_DECOMP_MAIN.yaml">REQ_BTP_DECOMP_MAIN</a></p></td>
+<td class="needs_title"><p>Main channel measures the temperature and applies the brake request</p></td>
+<td class="needs_derived_from"><p><a class="reference external" href="#REQ_BTP_SAFETY_GOAL">REQ_BTP_SAFETY_GOAL</a></p></td>
+<td class="needs_satisfies_back swcraft"><p><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/BrakeController.yaml">SWC-BrakeController</a><em>; </em><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/BrakeTemperatureSensor.yaml">SWC-BrakeTemperatureSensor</a></p></td>
+<td class="needs_satisfies_unconfirmed_back"><p></p></td>
+</tr>
+<tr class="need row-even" data-need-id="REQ_BTP_DECOMP_MONITOR"><td class="needs_id swcraft"><p><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=requirements/REQ_BTP_DECOMP_MONITOR.yaml">REQ_BTP_DECOMP_MONITOR</a></p></td>
+<td class="needs_title"><p>Monitor channel limits the permitted brake action</p></td>
+<td class="needs_derived_from"><p><a class="reference external" href="#REQ_BTP_SAFETY_GOAL">REQ_BTP_SAFETY_GOAL</a></p></td>
+<td class="needs_satisfies_back swcraft"><p><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/BrakeThermalProtection.yaml">SWC-BrakeThermalProtection</a></p></td>
+<td class="needs_satisfies_unconfirmed_back"><p></p></td>
+</tr>
+<tr class="need row-odd" data-need-id="REQ_BTP_DIAGNOSTICS"><td class="needs_id swcraft"><p><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=requirements/REQ_BTP_DIAGNOSTICS.yaml">REQ_BTP_DIAGNOSTICS</a></p></td>
+<td class="needs_title"><p>Record thermal protection events</p></td>
+<td class="needs_derived_from"><p></p></td>
+<td class="needs_satisfies_back swcraft"><p><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=interfaces/INvStorage.yaml">IF-INvStorage</a><em>; </em><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/DiagnosticManager.yaml">PORT-DiagnosticManager-rThermalProtectionEvent</a><em>; </em><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/DiagnosticManager.yaml">RUN-DiagnosticManager-ConfirmSnapshotStored</a><em>; </em><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/application/DiagnosticManager.yaml">RUN-DiagnosticManager-ProcessDiagnosticEvent</a><em>; </em><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=swc/basic_software/NvM.yaml">SWC-NvM</a></p></td>
+<td class="needs_satisfies_unconfirmed_back"><p></p></td>
+</tr>
+<tr class="need row-even" data-need-id="REQ_BTP_EXECUTION_CONTEXT"><td class="needs_id swcraft"><p><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=requirements/REQ_BTP_EXECUTION_CONTEXT.yaml">REQ_BTP_EXECUTION_CONTEXT</a></p></td>
+<td class="needs_title"><p>Both channels run in an ASIL B context</p></td>
+<td class="needs_derived_from swcraft"><p><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=requirements/REQ_BTP_DECOMP_MAIN.yaml">REQ_BTP_DECOMP_MAIN</a><em>; </em><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=requirements/REQ_BTP_DECOMP_MONITOR.yaml">REQ_BTP_DECOMP_MONITOR</a></p></td>
+<td class="needs_satisfies_back swcraft"><p><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=hardware/Core1.yaml">HW-Core1</a><em>; </em><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=hardware/P_Brake.yaml">HW-P_Brake</a><em>; </em><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=hardware/RAM.yaml">HW-RAM</a><em>; </em><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=tasks/Task_50ms.yaml">TASK-Task_50ms</a></p></td>
+<td class="needs_satisfies_unconfirmed_back"><p></p></td>
+</tr>
+<tr class="need row-odd" data-need-id="REQ_BTP_TEMPERATURE_RANGE"><td class="needs_id swcraft"><p><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=requirements/REQ_BTP_TEMPERATURE_RANGE.yaml">REQ_BTP_TEMPERATURE_RANGE</a></p></td>
+<td class="needs_title"><p>The brake temperature is carried from -40 to 1000 degC at 0.1 degC</p></td>
+<td class="needs_derived_from swcraft"><p><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=requirements/REQ_BTP_DECOMP_MAIN.yaml">REQ_BTP_DECOMP_MAIN</a><em>; </em><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=requirements/REQ_BTP_DECOMP_MONITOR.yaml">REQ_BTP_DECOMP_MONITOR</a></p></td>
+<td class="needs_satisfies_back"><p></p></td>
+<td class="needs_satisfies_unconfirmed_back swcraft"><p><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=interfaces/IBrakeDiagnostics.yaml">IF-IBrakeDiagnostics</a><em>; </em><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=interfaces/IBrakeTemperature.yaml">IF-IBrakeTemperature</a><em>; </em><a class="swcraft reference external" href="vscode://swcraft-local.swcraft-vscode/model?path=interfaces/IThermalProtectionStatus.yaml">IF-IThermalProtectionStatus</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">Vehicle control software requirements (synthetic)</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.0.4</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

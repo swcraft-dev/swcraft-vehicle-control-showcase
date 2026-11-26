@@ -1,0 +1,7 @@
+name: ChassisToCluster
+from:
+  composition: Chassis
+  port: pThermalProtectionStatus
+to:
+  swc: InstrumentCluster
+  port: rThermalProtectionStatus

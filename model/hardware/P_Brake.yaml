@@ -1,0 +1,8 @@
+name: P_Brake
+kind: partition
+core: Core1
+asil: B
+trust: trusted
+description: The partition on core 1 that runs the 50 ms brake work. Declared trusted, so it is not restricted for memory; it is rated at the highest level any partition of the processor declares.
+satisfies:
+- REQ_BTP_EXECUTION_CONTEXT@1
